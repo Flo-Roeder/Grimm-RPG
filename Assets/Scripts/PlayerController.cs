@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody2D rb;
+    // Rigidbody2D rb;
+    Rigidbody rb;
     Animator anim;
 
     private Vector2 moveInput;
@@ -24,29 +25,46 @@ public class PlayerController : MonoBehaviour
     }
 
     public float moveSpeed;
+    public float dashSpeed;
+
+    [SerializeField] Vector2 appliedDashForce;
+    public bool canDash=true;
+    public float dashCooldown;
+    private float dashTimer;
+
 
     private void Awake()
     {
-        rb= GetComponent<Rigidbody2D>();
+       // rb= GetComponent<Rigidbody2D>();
+       rb= GetComponent<Rigidbody>();
         anim= GetComponent<Animator>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        dashTimer = dashCooldown;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (!canDash)
+        {
+            if (dashTimer > 0)
+            {
+                dashTimer -= Time.deltaTime;
+            }
+            else if (dashTimer<=0)
+            {
+                canDash= true;
+                dashTimer = dashCooldown;
+            }
+        }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x*moveSpeed, moveInput.y*moveSpeed);
-        if (rb.velocity!=Vector2.zero)
+        rb.velocity = new Vector2(moveInput.x*moveSpeed+appliedDashForce.x, moveInput.y*moveSpeed+appliedDashForce.y);
+        if (rb.velocity!=Vector3.zero)
         {
         anim.SetFloat(AnimStrings.xVelocity, rb.velocity.x/moveSpeed);
         anim.SetFloat(AnimStrings.yVelocity, rb.velocity.y/moveSpeed);
@@ -58,6 +76,22 @@ public class PlayerController : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
         moveInput.Normalize();
         IsMoving = moveInput != Vector2.zero;
+
+    }
+
+    public void Dash(InputAction.CallbackContext context)
+    {
+        if (context.performed
+            && canDash)
+        {
+            appliedDashForce = new Vector2(anim.GetFloat(AnimStrings.xVelocity), anim.GetFloat(AnimStrings.yVelocity))*dashSpeed;
+            canDash= false;
+        }
+        else if(context.canceled)
+        {
+            appliedDashForce = Vector2.zero;
+        }
+
 
     }
 
