@@ -5,8 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    // Rigidbody2D rb;
-    Rigidbody rb;
+    Rigidbody2D rb;
     Animator anim;
 
     private Vector2 moveInput;
@@ -27,16 +26,19 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float dashSpeed;
 
-    [SerializeField] Vector2 appliedDashForce;
+    Vector2 appliedDashForce;
+    [SerializeField] float dashTime;
     public bool canDash=true;
     public float dashCooldown;
     private float dashTimer;
+    [SerializeField]float dashStaminaCost;
 
+
+    [SerializeField] HealthController healthController;
 
     private void Awake()
     {
-       // rb= GetComponent<Rigidbody2D>();
-       rb= GetComponent<Rigidbody>();
+        rb= GetComponent<Rigidbody2D>();
         anim= GetComponent<Animator>();
     }
 
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
             else if (dashTimer<=0)
             {
                 canDash= true;
+                healthController.canDash = true;
                 dashTimer = dashCooldown;
             }
         }
@@ -63,11 +66,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x*moveSpeed+appliedDashForce.x, moveInput.y*moveSpeed+appliedDashForce.y);
-        if (rb.velocity!=Vector3.zero)
+        rb.velocity = new Vector2(moveInput.x*(moveSpeed+appliedDashForce.x), moveInput.y*(moveSpeed+appliedDashForce.y));
+        if (rb.velocity!=Vector2.zero)
         {
-        anim.SetFloat(AnimStrings.xVelocity, rb.velocity.x/moveSpeed);
-        anim.SetFloat(AnimStrings.yVelocity, rb.velocity.y/moveSpeed);
+        anim.SetFloat(AnimStrings.xVelocity, rb.velocity.x/(moveSpeed+appliedDashForce.x));
+        anim.SetFloat(AnimStrings.yVelocity, rb.velocity.y/(moveSpeed+appliedDashForce.y));
         }
     }
 
@@ -81,18 +84,24 @@ public class PlayerController : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if (context.performed
-            && canDash)
+        if (dashStaminaCost<=healthController.currentStamina
+            && moveInput!=Vector2.zero)
         {
-            appliedDashForce = new Vector2(anim.GetFloat(AnimStrings.xVelocity), anim.GetFloat(AnimStrings.yVelocity))*dashSpeed;
-            canDash= false;
+            if (context.started
+                  && canDash)
+            {
+                appliedDashForce = new Vector2(Mathf.Abs(anim.GetFloat(AnimStrings.xVelocity)), Mathf.Abs(anim.GetFloat(AnimStrings.yVelocity)) ) * dashSpeed;
+                StartCoroutine(DashCo());
+                canDash = false;
+                healthController.TakeStamina(dashStaminaCost,canDash);
+            }
         }
-        else if(context.canceled)
-        {
-            appliedDashForce = Vector2.zero;
-        }
+    }
 
-
+    private IEnumerator DashCo()
+    {
+        yield return new WaitForSeconds(dashTime);
+        appliedDashForce = Vector2.zero;
     }
 
 }
