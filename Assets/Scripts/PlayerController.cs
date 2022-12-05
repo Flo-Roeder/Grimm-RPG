@@ -104,4 +104,9 @@ public class PlayerController : MonoBehaviour
         appliedDashForce = Vector2.zero;
     }
 
+
+    public void Attack(InputAction.CallbackContext context)
+    {
+        anim.SetTrigger(AnimStrings.isAttacking);
+    }
 }
