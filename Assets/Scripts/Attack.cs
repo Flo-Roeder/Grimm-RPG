@@ -8,12 +8,33 @@ public class Attack : MonoBehaviour
 
     public float damage;
 
+    [SerializeField] float staminaCost;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        HealthController healthController= collision.GetComponent<HealthController>();
-        if (healthController!=null)
+        if (collision.GetComponent<HealthController>())
         {
+            HealthController healthController= collision.GetComponent<HealthController>();
             healthController.Hit(damage);
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (this.gameObject.GetComponentInParent<HealthController>())
+        {
+            HealthController healthController = this.gameObject.GetComponentInParent<HealthController>();
+            if (healthController.currentStamina>staminaCost)
+            {
+            healthController.TakeStamina(staminaCost);
+            }
+            else
+            {
+                //TODO stamina stagger
+                //stamina regen stop for short period
+                //no further attacks
+                //reduced movespeed?
+            }
         }
     }
 }

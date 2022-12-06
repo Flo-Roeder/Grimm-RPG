@@ -42,4 +42,9 @@ public class HealthController : MonoBehaviour
         currentStamina-= staminaReduce;
         canDash = playerCanDash;
     }
+
+    public void TakeStamina(float staminaReduce)
+    {
+        currentStamina-= staminaReduce;
+    }
 }

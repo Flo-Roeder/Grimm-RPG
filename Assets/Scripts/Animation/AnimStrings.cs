@@ -8,4 +8,5 @@ internal class AnimStrings
     internal static string xVelocity = "xVelocity";
     internal static string isMoving = "isMoving";
     internal static string isAttacking = "isAttacking";
+    internal static string canMove = "canMove";
 }

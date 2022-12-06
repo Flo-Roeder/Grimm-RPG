@@ -23,6 +23,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    [SerializeField]private bool _canMove;
+    public bool CanMove
+    {
+        get { return _canMove; }
+        set { _canMove = anim.GetBool(AnimStrings.canMove); }
+    }
+
     public float moveSpeed;
     public float dashSpeed;
 
@@ -66,11 +73,19 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x*(moveSpeed+appliedDashForce.x), moveInput.y*(moveSpeed+appliedDashForce.y));
+        if(anim.GetBool(AnimStrings.canMove))
+        {
+            rb.velocity = new Vector2(moveInput.x*(moveSpeed+appliedDashForce.x), moveInput.y*(moveSpeed+appliedDashForce.y));
+
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
         if (rb.velocity!=Vector2.zero)
         {
-        anim.SetFloat(AnimStrings.xVelocity, rb.velocity.x/(moveSpeed+appliedDashForce.x));
-        anim.SetFloat(AnimStrings.yVelocity, rb.velocity.y/(moveSpeed+appliedDashForce.y));
+            anim.SetFloat(AnimStrings.xVelocity, rb.velocity.x/(moveSpeed+appliedDashForce.x));
+            anim.SetFloat(AnimStrings.yVelocity, rb.velocity.y/(moveSpeed+appliedDashForce.y));
         }
     }
 
@@ -79,7 +94,6 @@ public class PlayerController : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
         moveInput.Normalize();
         IsMoving = moveInput != Vector2.zero;
-
     }
 
     public void Dash(InputAction.CallbackContext context)
@@ -88,7 +102,8 @@ public class PlayerController : MonoBehaviour
             && moveInput!=Vector2.zero)
         {
             if (context.started
-                  && canDash)
+                  && canDash
+                  &&anim.GetBool(AnimStrings.canMove))
             {
                 appliedDashForce = new Vector2(Mathf.Abs(anim.GetFloat(AnimStrings.xVelocity)), Mathf.Abs(anim.GetFloat(AnimStrings.yVelocity)) ) * dashSpeed;
                 StartCoroutine(DashCo());
@@ -107,6 +122,10 @@ public class PlayerController : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        anim.SetTrigger(AnimStrings.isAttacking);
+        if (context.started)
+        {
+            anim.SetTrigger(AnimStrings.isAttacking);
+        }
     }
+
 }
