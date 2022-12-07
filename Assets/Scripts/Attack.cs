@@ -8,13 +8,35 @@ public class Attack : MonoBehaviour
 
     public float damage;
 
+    [SerializeField] float knockbackAmount;
+    float knockbackForce;
+    [SerializeField] float knockbackTime;
+    public float knockbackTimer;
+
+    private Vector2 knockbackDirection;
+    private Rigidbody2D rb;
     [SerializeField] float staminaCost;
+
+    private void Update()
+    {
+        if (knockbackTimer > 0)
+        {
+            knockbackTimer -= Time.deltaTime;
+            knockbackForce= Mathf.Lerp(0,knockbackForce,knockbackTimer*100);
+            rb.AddForce(rb.velocity + knockbackDirection * knockbackForce);
+        }
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<HealthController>())
         {
             HealthController healthController= collision.GetComponent<HealthController>();
+            rb=healthController.GetComponentInParent<Rigidbody2D>();
+            knockbackDirection = (rb.gameObject.transform.position-transform.position).normalized;
+            knockbackTimer = knockbackTime;
+            knockbackForce = knockbackAmount;
             healthController.Hit(damage);
         }
     }

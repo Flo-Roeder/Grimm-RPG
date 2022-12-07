@@ -21,20 +21,38 @@ public class HealthController : MonoBehaviour
 
     private void Start()
     {
+        if (healthUI!=null)
+        {
         healthUI.SetHealthUI(maxHealth,currentHealth);
+
+        }
     }
 
     private void Update()
     {
         currentStamina = currentStamina < maxStamina ? currentStamina + Time.deltaTime*10 : maxStamina;
+        if (healthUI!=null)
+        {
         healthUI.SetStaminaUI(maxStamina,currentStamina,canDash);
+
+        }
     }
 
 
     public void Hit(float damage) 
     {
         currentHealth -= damage;
-        healthUI.SetHealthUI(maxHealth,currentHealth);
+        if (currentHealth<=0)
+        {
+            //TODO death animation
+            gameObject.GetComponentInParent<Rigidbody2D>().gameObject.SetActive(false);
+        }
+
+        if (healthUI != null)
+        {
+            healthUI.SetHealthUI(maxHealth,currentHealth);
+
+        }
     }
 
     public void TakeStamina(float staminaReduce, bool playerCanDash)

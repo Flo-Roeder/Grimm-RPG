@@ -51,12 +51,14 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Attack2/HitBox b
+    path: HealthController/Attack2/HitBox b
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
+      value: {fileID: -658570041, guid: 09a83e9a3aa4b9647b8c96a3ed2c34ff, type: 3}
+    - time: 0.7
       value: {fileID: -658570041, guid: 09a83e9a3aa4b9647b8c96a3ed2c34ff, type: 3}
     attribute: m_Sprite
     path: 
@@ -70,7 +72,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2215998076
+      path: 2283047137
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -85,12 +87,13 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: -658570041, guid: 09a83e9a3aa4b9647b8c96a3ed2c34ff, type: 3}
+    - {fileID: -658570041, guid: 09a83e9a3aa4b9647b8c96a3ed2c34ff, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -140,7 +143,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Attack2/HitBox b
+    path: HealthController/Attack2/HitBox b
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []
