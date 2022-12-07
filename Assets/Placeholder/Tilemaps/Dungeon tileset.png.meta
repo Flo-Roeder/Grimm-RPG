@@ -516,7 +516,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon tileset_19
+      name: wall
       rect:
         serializedVersion: 2
         x: 0
@@ -3728,6 +3728,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: flag_blue
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 160
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96575cc5b7df0f748927dbdc89f0cec3
+      internalID: 1937906286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag_red
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ca511b530b1be4abdf54f5de2e7a21
+      internalID: -504750485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dungeon tileset_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: -1.2237657, y: -0.304423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7fd5e4372850c4fb28cd3e9ab0f7db
+      internalID: 1426114343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall prefab
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d222a2164a7b24198b1bd3616b759f
+      internalID: -1353525181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3739,6 +3823,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      flag_red: -504750485
       Dungeon tileset_146: -1675342440
       Dungeon tileset_49: 893189156
       Dungeon tileset_25: -692027539
@@ -3772,7 +3857,7 @@ TextureImporter:
       Dungeon tileset_164: -2068279348
       Dungeon tileset_3: -82684153
       Dungeon tileset_80: -984419685
-      Dungeon tileset_19: -1992225895
+      Dungeon tileset_19: 1426114343
       Dungeon tileset_100: -127959204
       Dungeon tileset_154: -1325609697
       Dungeon tileset_104: -2082390686
@@ -3788,6 +3873,7 @@ TextureImporter:
       Dungeon tileset_165: 1206952381
       Dungeon tileset_54: -931201005
       Dungeon tileset_30: -1988434458
+      wall: -1992225895
       Dungeon tileset_23: 475741444
       Dungeon tileset_71: -1785972112
       Dungeon tileset_61: -1042513454
@@ -3811,6 +3897,7 @@ TextureImporter:
       Dungeon tileset_53: -457729630
       Dungeon tileset_89: 1626210916
       Dungeon tileset_167: -2073649419
+      flag_blue: 1937906286
       Dungeon tileset_109: -2138280344
       Dungeon tileset_14: 1513448555
       Dungeon tileset_27: 1733848453
@@ -3846,6 +3933,7 @@ TextureImporter:
       Dungeon tileset_: -909011262
       Dungeon tileset_9: 1732236083
       Dungeon tileset_43: 2145036884
+      wall prefab: -1353525181
       Dungeon tileset_33: 892009860
       Dungeon tileset_123: 15371185
       Dungeon tileset_162: 1734200612

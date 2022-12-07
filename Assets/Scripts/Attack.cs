@@ -19,13 +19,19 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
-        if (knockbackTimer > 0)
+        if (rb != null)
         {
-            knockbackTimer -= Time.deltaTime;
-            knockbackForce= Mathf.Lerp(0,knockbackForce,knockbackTimer*100);
-            rb.AddForce(rb.velocity + knockbackDirection * knockbackForce);
+            if (knockbackTimer > 0)
+            {
+                knockbackTimer -= Time.deltaTime;
+                knockbackForce= Mathf.Lerp(0,knockbackForce,knockbackTimer*100);
+                rb.AddForce(knockbackDirection * knockbackForce);
+            }
+            else
+            {
+            rb.velocity=Vector2.zero;
+            }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

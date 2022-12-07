@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 667060448}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Attack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  knockbackAmount: 0
+  knockbackAmount: 150
+  knockbackTime: 0.15
+  knockbackTimer: 0
   staminaCost: 8
 --- !u!1 &743062338
 GameObject:
@@ -297,7 +299,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  knockbackAmount: 0
+  knockbackAmount: 150
+  knockbackTime: 0.15
+  knockbackTimer: 0
   staminaCost: 8
 --- !u!1 &965799770
 GameObject:
@@ -429,7 +433,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  knockbackAmount: 0
+  knockbackAmount: 150
+  knockbackTime: 0.15
+  knockbackTimer: 0
   staminaCost: 8
 --- !u!1 &1490951242
 GameObject:
@@ -561,7 +567,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 12
-  knockbackAmount: 0
+  knockbackAmount: 200
+  knockbackTime: 0.2
+  knockbackTimer: 0
   staminaCost: 12
 --- !u!1 &1621366043
 GameObject:
@@ -693,7 +701,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 12
-  knockbackAmount: 0
+  knockbackAmount: 200
+  knockbackTime: 0.2
+  knockbackTimer: 0
   staminaCost: 12
 --- !u!1 &1728988648
 GameObject:
@@ -704,7 +714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1728988649}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Attack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +870,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 12
-  knockbackAmount: 0
+  knockbackAmount: 200
+  knockbackTime: 0.2
+  knockbackTimer: 0
   staminaCost: 12
 --- !u!1 &1747782067
 GameObject:
@@ -992,7 +1004,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 12
-  knockbackAmount: 0
+  knockbackAmount: 200
+  knockbackTime: 0.2
+  knockbackTimer: 0
   staminaCost: 12
 --- !u!1 &1879471681
 GameObject:
@@ -1124,7 +1138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  knockbackAmount: 0
+  knockbackAmount: 150
+  knockbackTime: 0.15
+  knockbackTimer: 0
   staminaCost: 8
 --- !u!1 &2139256331115172465
 GameObject:
@@ -1189,7 +1205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cae780c7139be40bb78d89fef06f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 100
   currentHealth: 100
   maxStamina: 100
   currentStamina: 100
@@ -1297,7 +1313,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.3
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -1466,14 +1482,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fd177a3607cc840a5f75cacd096668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canMove: 0
+  _canMove: 1
   moveSpeed: 10
   dashSpeed: 20
-  dashTime: 0.3
+  dashTime: 0.2
   canDash: 1
   dashCooldown: 1.5
   dashStaminaCost: 20
-  healthController: {fileID: 0}
+  healthController: {fileID: 1933154411}
 --- !u!95 &8831065271178886083
 Animator:
   serializedVersion: 4

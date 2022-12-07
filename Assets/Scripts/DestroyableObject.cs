@@ -11,7 +11,6 @@ public class DestroyableObject : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerHit"))
         {
             Destroy(this.gameObject);
-            
         }
     }
 }
