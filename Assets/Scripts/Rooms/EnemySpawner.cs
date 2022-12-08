@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject[] enemiePrefabs;
+    public GameObject[] enemiePrefabs;
+    int rand;
 
+
+    private void Start()
+    {
+    }
 
     private void OnEnable()
     {
-        int rand = Random.Range(0, enemiePrefabs.Length);
-        if (enemiePrefabs[rand]!=null)
+        if (enemiePrefabs.Length>0)
         {
-            Instantiate(enemiePrefabs[rand],this.gameObject.transform);
-        }
-        else
-        {
-            Destroy(this.gameObject);
+            rand = Random.Range(0, enemiePrefabs.Length);
+            if (enemiePrefabs[rand]==null)
+            {
+                Destroy(this.gameObject);
+            }
+            else if(enemiePrefabs!=null)
+            {
+                Instantiate(enemiePrefabs[rand],this.gameObject.transform);
+            }
         }
     }
 }

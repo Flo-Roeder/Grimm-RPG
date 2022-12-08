@@ -12,6 +12,7 @@ public class VCam_change : MonoBehaviour
     private void Awake()
     {
         roomCollider= GetComponent<Collider2D>();
+        vCam = GameObject.FindGameObjectWithTag("VCam").GetComponent<CinemachineConfiner2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

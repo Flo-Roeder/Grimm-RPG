@@ -5,20 +5,52 @@ using UnityEngine;
 public class RoomHandler : MonoBehaviour
 {
     [SerializeField] GameObject[] enemies;
-    [SerializeField] GameObject finishLayer;
+    [SerializeField] GameObject activateOnClear;
+    [SerializeField] GameObject deactivateOnClear;
+    [SerializeField] GameObject activateOnStart;
+    [SerializeField] GameObject deactivateOnStart;
 
+    [SerializeField] private bool roomCleared;
+    public bool roomStarted;
+
+    public float trackEnemiesDelay=1f;
     private void Awake()
     {
-        
+        deactivateOnClear.SetActive(true);
+        activateOnClear.SetActive(false);
+        activateOnStart.SetActive(false);
+        deactivateOnStart.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (enemies.Length==0 )
+        if (roomStarted)
         {
-            finishLayer.SetActive(false);
+            activateOnStart.SetActive(true);
+            deactivateOnStart.SetActive(false);
+            trackEnemiesDelay -= Time.deltaTime;
+            if (trackEnemiesDelay<=0)
+            {
+            TrackEnemies();
+
+            }
         }
+        
+        if (roomCleared)
+        {
+            deactivateOnClear.SetActive(false);
+            activateOnClear.SetActive(true);
+        }
+
+    }
+
+    private void TrackEnemies()
+    {
+            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            if (enemies.Length==0 )
+            {
+                roomCleared = true;
+            }
     }
 }
