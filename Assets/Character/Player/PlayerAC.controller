@@ -926,8 +926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f843898b4dcfb443a50d7dca45e478c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterState: 1
-  exitState: 1
+  enterState: 0
+  exitState: 0
   boolName: canMove
   setEnter: 0
   setExit: 1

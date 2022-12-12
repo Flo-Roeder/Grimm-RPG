@@ -6,7 +6,7 @@ public class StartRoom : MonoBehaviour
 {
     [SerializeField] RoomHandler roomHandler;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -14,11 +14,4 @@ public class StartRoom : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            roomHandler.roomStarted = true;
-        }
-    }
 }

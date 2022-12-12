@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NextRoom : MonoBehaviour
@@ -33,6 +34,6 @@ public class NextRoom : MonoBehaviour
         Transform playTrans = player.GetComponent<Transform>();
         playTrans.position = new Vector2(playTrans.position.x, playTrans.position.y + 5);
         player.GetComponent<Animator>().SetBool(AnimStrings.canMove, true);
-
+        GameObject.FindGameObjectWithTag("LevelUI").GetComponentInChildren<LevelUI>().NextRoomUpdateLevelUI();
     }
 }

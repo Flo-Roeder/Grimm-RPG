@@ -9,6 +9,7 @@ TagManager:
   - VCam
   - FadeCanvas
   - HealthUI
+  - LevelUI
   layers:
   - Default
   - TransparentFX

@@ -63,6 +63,18 @@ public class HealthController : MonoBehaviour
 
         }
     }
+    public void Heal(float heal)
+    {
+        if (currentHealth < maxHealth)
+        {
+        currentHealth+= heal;
+        }
+        else
+        {
+            currentHealth = maxHealth;
+        }
+        healthUI.SetHealthUI(maxHealth, currentHealth);
+    }
 
     public void TakeStamina(float staminaReduce, bool playerCanDash)
     {
@@ -74,4 +86,5 @@ public class HealthController : MonoBehaviour
     {
         currentStamina-= staminaReduce;
     }
+
 }
