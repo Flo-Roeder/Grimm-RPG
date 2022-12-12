@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  knockbackAmount: 300
-  knockbackTime: 0.2
+  knockbackAmount: 700
+  knockbackTime: 0.15
   knockbackTimer: 0
   staminaCost: 0
 --- !u!1 &8913411817708140788

@@ -25,7 +25,7 @@ public class EnemyJumpChase : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector2 direction = (followTarget.position - transform.position).normalized;
 

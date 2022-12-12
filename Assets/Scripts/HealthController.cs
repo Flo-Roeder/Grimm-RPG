@@ -11,12 +11,15 @@ public class HealthController : MonoBehaviour
     public float currentStamina;
     public bool canDash = true;
 
+    [SerializeField] bool isPlayer;
     [SerializeField] HealthUI healthUI;
+    Animator anim;
 
     private void Awake()
     {
         currentHealth = maxHealth;
         currentStamina= maxStamina;
+        anim= GetComponentInParent<Animator>();
     }
 
     private void Start()
@@ -42,6 +45,12 @@ public class HealthController : MonoBehaviour
     public void Hit(float damage) 
     {
         currentHealth -= damage;
+        if (isPlayer)
+        {
+            anim.SetTrigger(AnimStrings.isHit);
+        }
+
+
         if (currentHealth<=0)
         {
             //TODO death animation

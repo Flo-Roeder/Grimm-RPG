@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: Fighting_level1
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 8867350098774186894, guid: 12562a0aa3b0f7643802faa37dd80554, type: 3}
-  - {fileID: 8867350098774186894, guid: 4dfc38d634bab884da4600bd7930ec19, type: 3}
-  - {fileID: 8867350098774186894, guid: 7e74baf69dbb62e478da1a51cbd0b8a3, type: 3}
+  - {fileID: 8867350098774186894, guid: 8d6e35de2e2341b4cbe89f9ed3539b85, type: 3}

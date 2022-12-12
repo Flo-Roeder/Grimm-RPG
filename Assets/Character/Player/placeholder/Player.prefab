@@ -62,8 +62,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678952351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.63699996, z: 0}
-  m_LocalScale: {x: 1.5651153, y: 2.120284, z: 1}
+  m_LocalPosition: {x: -1.5, y: 0.63699996, z: 0}
+  m_LocalScale: {x: 2, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 667060448}
@@ -165,8 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  knockbackAmount: 150
-  knockbackTime: 0.15
+  knockbackAmount: 120
+  knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
 --- !u!1 &743062338
@@ -196,8 +196,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743062338}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.03999996, y: 1.12, z: 0}
-  m_LocalScale: {x: 2.1772642, y: 2.120284, z: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 2.5, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 667060448}
@@ -299,8 +299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  knockbackAmount: 150
-  knockbackTime: 0.15
+  knockbackAmount: 120
+  knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
 --- !u!1 &965799770
@@ -330,8 +330,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965799770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.63699996, z: 0}
-  m_LocalScale: {x: 1.5651153, y: 2.120284, z: 1}
+  m_LocalPosition: {x: 1.5, y: 0.63699996, z: 0}
+  m_LocalScale: {x: 2, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 667060448}
@@ -433,8 +433,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  knockbackAmount: 150
-  knockbackTime: 0.15
+  knockbackAmount: 120
+  knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
 --- !u!1 &1490951242
@@ -463,14 +463,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490951242}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.03999996, y: -0.62, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 0.3, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1728988649}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1490951245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -566,11 +566,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee54d44d137a61b4c97da501e80727f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 12
-  knockbackAmount: 200
+  damage: 6
+  knockbackAmount: 100
   knockbackTime: 0.2
   knockbackTimer: 0
-  staminaCost: 12
+  staminaCost: 5
 --- !u!1 &1621366043
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,14 +597,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621366043}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.63699996, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -3, y: 0.637, z: 0}
   m_LocalScale: {x: 0.3, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1728988649}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &1621366046
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -700,11 +700,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee54d44d137a61b4c97da501e80727f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 12
-  knockbackAmount: 200
+  damage: 6
+  knockbackAmount: 100
   knockbackTime: 0.2
   knockbackTimer: 0
-  staminaCost: 12
+  staminaCost: 5
 --- !u!1 &1728988648
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,14 +766,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735309351}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.63699996, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 3, y: 0.63699996, z: 0}
   m_LocalScale: {x: 0.3, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1728988649}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &1735309354
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -869,11 +869,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee54d44d137a61b4c97da501e80727f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 12
-  knockbackAmount: 200
+  damage: 6
+  knockbackAmount: 100
   knockbackTime: 0.2
   knockbackTimer: 0
-  staminaCost: 12
+  staminaCost: 5
 --- !u!1 &1747782067
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,14 +900,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747782067}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.03999996, y: 2.23, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 0.3, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1728988649}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1747782070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1003,11 +1003,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee54d44d137a61b4c97da501e80727f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 12
-  knockbackAmount: 200
+  damage: 6
+  knockbackAmount: 100
   knockbackTime: 0.2
   knockbackTimer: 0
-  staminaCost: 12
+  staminaCost: 5
 --- !u!1 &1879471681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,8 +1035,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879471681}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.03999996, y: -0.16999996, z: 0}
-  m_LocalScale: {x: 2.1772642, y: 2.120284, z: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 2.5, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 667060448}
@@ -1138,8 +1138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  knockbackAmount: 150
-  knockbackTime: 0.15
+  knockbackAmount: 120
+  knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
 --- !u!1 &2139256331115172465
@@ -1210,6 +1210,7 @@ MonoBehaviour:
   maxStamina: 100
   currentStamina: 100
   canDash: 1
+  isPlayer: 1
   healthUI: {fileID: 0}
 --- !u!1 &8831065271178886106
 GameObject:

@@ -17,7 +17,7 @@ public class Attack : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] float staminaCost;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (rb != null)
         {
@@ -29,7 +29,7 @@ public class Attack : MonoBehaviour
             }
             else
             {
-            rb.velocity=Vector2.zero;
+            rb.AddForce(Vector2.zero);
             }
         }
     }
