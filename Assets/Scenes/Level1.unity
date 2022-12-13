@@ -2594,10 +2594,6 @@ PrefabInstance:
       propertyPath: healthUI
       value: 
       objectReference: {fileID: 135953217}
-    - target: {fileID: 8831065271178886084, guid: 455a9523c0a1b0c4c92e8acd46227e56, type: 3}
-      propertyPath: m_SleepingMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8831065271178886085, guid: 455a9523c0a1b0c4c92e8acd46227e56, type: 3}
       propertyPath: m_RootOrder
       value: 4
