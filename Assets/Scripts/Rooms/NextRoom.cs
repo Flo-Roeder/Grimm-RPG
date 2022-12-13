@@ -32,7 +32,7 @@ public class NextRoom : MonoBehaviour
         player.GetComponent<Animator>().SetBool(AnimStrings.canMove, false);
         yield return new WaitForSeconds(.5f);
         Transform playTrans = player.GetComponent<Transform>();
-        playTrans.position = new Vector2(playTrans.position.x, playTrans.position.y + 5);
+        playTrans.position = roomSpawnPoint.position;
         player.GetComponent<Animator>().SetBool(AnimStrings.canMove, true);
         GameObject.FindGameObjectWithTag("LevelUI").GetComponentInChildren<LevelUI>().NextRoomUpdateLevelUI();
     }

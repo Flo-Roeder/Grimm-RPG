@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: atk_6
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.325
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.35
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: HealthController/Attack2/HitBox l
+    classID: 1
+    script: {fileID: 0}
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 84f569eca8345f54ab6d16ae4c72d480, type: 3}
+    - time: 0.025
+      value: {fileID: 21300000, guid: 23d420356e1a5c6499b67f1aecb8f4d9, type: 3}
+    - time: 0.05
+      value: {fileID: 21300000, guid: 37721f478de8f8d4884ce4f88225bcb6, type: 3}
+    - time: 0.075
+      value: {fileID: 21300000, guid: 5db6c9f7b65d3074fa359fe57ebc8b05, type: 3}
+    - time: 0.1
+      value: {fileID: 21300000, guid: 0f391d2a1a58b334285b9b77d473cf6d, type: 3}
+    - time: 0.125
+      value: {fileID: 21300000, guid: f92d48712a4c0f1499460aaa67676545, type: 3}
+    - time: 0.15
+      value: {fileID: 21300000, guid: befbb187f9914de4886dc043e783e8b3, type: 3}
+    - time: 0.175
+      value: {fileID: 21300000, guid: 56242d9dc15b71f4ca25957dd644dde1, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: d88f5715914c0fe41a870c37094850b4, type: 3}
+    - time: 0.225
+      value: {fileID: 21300000, guid: 83be7c40467916640b44a06b7903d10f, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 75467f49e0d64e646b9c3033c75dbe0c, type: 3}
+    - time: 0.275
+      value: {fileID: 21300000, guid: 6646c7530a6dbdf4b95b1f1330ad4ecd, type: 3}
+    - time: 0.3
+      value: {fileID: 21300000, guid: 3e8eca70efee33145886a9a003c65c9b, type: 3}
+    - time: 0.325
+      value: {fileID: 21300000, guid: 409acba2bfbb5464d8dc8eef5630f3f1, type: 3}
+    - time: 0.35
+      value: {fileID: 21300000, guid: 20939ec54a1b15145afa87177473bb46, type: 3}
+    - time: 0.375
+      value: {fileID: 21300000, guid: b63669910a39ea84db768b758a5fdba4, type: 3}
+    - time: 0.4
+      value: {fileID: 21300000, guid: 202296ee8cbeb424a85eaf481cde6dbe, type: 3}
+    - time: 0.425
+      value: {fileID: 21300000, guid: d33f1abaa6de38e40ac309b87e8c1eed, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 40
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 1873585638
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 84f569eca8345f54ab6d16ae4c72d480, type: 3}
+    - {fileID: 21300000, guid: 23d420356e1a5c6499b67f1aecb8f4d9, type: 3}
+    - {fileID: 21300000, guid: 37721f478de8f8d4884ce4f88225bcb6, type: 3}
+    - {fileID: 21300000, guid: 5db6c9f7b65d3074fa359fe57ebc8b05, type: 3}
+    - {fileID: 21300000, guid: 0f391d2a1a58b334285b9b77d473cf6d, type: 3}
+    - {fileID: 21300000, guid: f92d48712a4c0f1499460aaa67676545, type: 3}
+    - {fileID: 21300000, guid: befbb187f9914de4886dc043e783e8b3, type: 3}
+    - {fileID: 21300000, guid: 56242d9dc15b71f4ca25957dd644dde1, type: 3}
+    - {fileID: 21300000, guid: d88f5715914c0fe41a870c37094850b4, type: 3}
+    - {fileID: 21300000, guid: 83be7c40467916640b44a06b7903d10f, type: 3}
+    - {fileID: 21300000, guid: 75467f49e0d64e646b9c3033c75dbe0c, type: 3}
+    - {fileID: 21300000, guid: 6646c7530a6dbdf4b95b1f1330ad4ecd, type: 3}
+    - {fileID: 21300000, guid: 3e8eca70efee33145886a9a003c65c9b, type: 3}
+    - {fileID: 21300000, guid: 409acba2bfbb5464d8dc8eef5630f3f1, type: 3}
+    - {fileID: 21300000, guid: 20939ec54a1b15145afa87177473bb46, type: 3}
+    - {fileID: 21300000, guid: b63669910a39ea84db768b758a5fdba4, type: 3}
+    - {fileID: 21300000, guid: 202296ee8cbeb424a85eaf481cde6dbe, type: 3}
+    - {fileID: 21300000, guid: d33f1abaa6de38e40ac309b87e8c1eed, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.45000002
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.325
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.35
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: HealthController/Attack2/HitBox l
+    classID: 1
+    script: {fileID: 0}
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
