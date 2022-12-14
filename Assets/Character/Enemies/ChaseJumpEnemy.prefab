@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011870384, y: 0.13270831}
+  m_Offset: {x: -0.019443572, y: 0.14028162}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4940825, y: 1.6669815}
+  m_Size: {x: 1.2668852, y: 1.4397839}
   m_EdgeRadius: 0
 --- !u!114 &8913411817432178322
 MonoBehaviour:
@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  critChancePercentage: 0
+  critMultiplier: 0
   knockbackAmount: 500
   knockbackTime: 0.2
   knockbackTimer: 0
@@ -200,7 +202,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009799123, y: -0.41504496}
+  m_Offset: {x: -0.009799123, y: 0.15517205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -211,7 +213,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.912596, y: 0.66288984}
+  m_Size: {x: 1.912596, y: 1.8033239}
   m_EdgeRadius: 0
 --- !u!114 &8913411817708140687
 MonoBehaviour:
@@ -227,11 +229,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healthUI: {fileID: 132520420}
+  armor: 0
   maxStamina: 0
   currentStamina: 0
   canDash: 1
   isPlayer: 0
-  healthUI: {fileID: 132520420}
 --- !u!114 &5687111368875511533
 MonoBehaviour:
   m_ObjectHideFlags: 0

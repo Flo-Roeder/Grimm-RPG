@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomSpawner : MonoBehaviour
 {
     [Tooltip("for higher chance input the object multiple times")]
-    public GameObject[] enemiePrefabs;
+    public GameObject[] prefabsToRandomize;
     int rand;
 
 
@@ -15,16 +15,16 @@ public class RandomSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        if (enemiePrefabs.Length>0)
+        if (prefabsToRandomize.Length>0)
         {
-            rand = Random.Range(0, enemiePrefabs.Length);
-            if (enemiePrefabs[rand]==null)
+            rand = Random.Range(0, prefabsToRandomize.Length);
+            if (prefabsToRandomize[rand]==null)
             {
                 Destroy(this.gameObject);
             }
-            else if(enemiePrefabs!=null)
+            else if(prefabsToRandomize!=null)
             {
-                Instantiate(enemiePrefabs[rand],this.gameObject.transform);
+                Instantiate(prefabsToRandomize[rand],this.gameObject.transform);
             }
         }
     }

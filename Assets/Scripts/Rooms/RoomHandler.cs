@@ -6,9 +6,9 @@ public class RoomHandler : MonoBehaviour
 {
     [SerializeField] GameObject[] enemies;
     [SerializeField] GameObject activateOnClear;
-    [SerializeField] GameObject deactivateOnClear;
+   // [SerializeField] GameObject deactivateOnClear;
     [SerializeField] GameObject activateOnStart;
-    [SerializeField] GameObject deactivateOnStart;
+   // [SerializeField] GameObject deactivateOnStart;
 
     [SerializeField] private bool roomCleared;
     public bool roomStarted;
@@ -16,10 +16,10 @@ public class RoomHandler : MonoBehaviour
     public float trackEnemiesDelay=1f;
     private void Awake()
     {
-        deactivateOnClear.SetActive(true);
+   //     deactivateOnClear.SetActive(true);
         activateOnClear.SetActive(false);
         activateOnStart.SetActive(false);
-        deactivateOnStart.SetActive(true);
+    //    deactivateOnStart.SetActive(true);
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class RoomHandler : MonoBehaviour
         if (roomStarted)
         {
             activateOnStart.SetActive(true);
-            deactivateOnStart.SetActive(false);
+     //       deactivateOnStart.SetActive(false);
             trackEnemiesDelay -= Time.deltaTime;
             if (trackEnemiesDelay<=0)
             {
@@ -39,7 +39,7 @@ public class RoomHandler : MonoBehaviour
         
         if (roomCleared)
         {
-            deactivateOnClear.SetActive(false);
+    //        deactivateOnClear.SetActive(false);
             activateOnClear.SetActive(true);
         }
 
@@ -53,4 +53,15 @@ public class RoomHandler : MonoBehaviour
                 roomCleared = true;
             }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player")
+            && !roomStarted)
+        {
+            roomStarted = true;
+        }
+    }
+
+
 }

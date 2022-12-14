@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d083c4291d44e448a60af38dae086d, type: 3}
+  m_Name: Fighting_level1
+  m_EditorClassIdentifier: 
+  rooms:
+  - {fileID: 9019546414813515512, guid: 8df4be78c1264ad44a1201747990a4e0, type: 3}
+  - {fileID: 9019546414813515512, guid: 07f4867b43da3fe46a68e20bdd704bff, type: 3}
+  - {fileID: 9019546414813515512, guid: c84a67e601ab23f4aa3c91415527451b, type: 3}

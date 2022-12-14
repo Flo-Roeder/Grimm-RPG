@@ -7,6 +7,8 @@ public class Attack : MonoBehaviour
 {
 
     public float damage;
+    [SerializeField] int critChancePercentage;
+    [SerializeField] float critMultiplier;
 
     [SerializeField] float knockbackAmount;
     float knockbackForce;
@@ -43,7 +45,7 @@ public class Attack : MonoBehaviour
             knockbackDirection = (rb.gameObject.transform.position-transform.position).normalized;
             knockbackTimer = knockbackTime;
             knockbackForce = knockbackAmount;
-            healthController.Hit(damage);
+            healthController.Hit(CalculateDamage());
         }
     }
 
@@ -64,5 +66,11 @@ public class Attack : MonoBehaviour
                 //reduced movespeed?
             }
         }
+    }
+
+    private float CalculateDamage()
+    {
+        int _checkCrit = Random.Range(0, 101);
+        return  _checkCrit <= critChancePercentage ? damage * critMultiplier : damage;
     }
 }

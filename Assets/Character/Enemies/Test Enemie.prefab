@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023038447, y: 0.16979402}
+  m_Offset: {x: 0.04717955, y: 0.2418834}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0556492, y: 1.2486372}
+  m_Size: {x: 1.1636744, y: 1.4961126}
   m_EdgeRadius: 0
 --- !u!114 &8913411817432178322
 MonoBehaviour:
@@ -90,10 +90,13 @@ GameObject:
   - component: {fileID: 8913411817708140680}
   - component: {fileID: 8913411817708140683}
   - component: {fileID: 8913411817708140682}
-  - component: {fileID: 8913411817708140686}
   - component: {fileID: 8913411817708140687}
+  - component: {fileID: 5405711471403085973}
+  - component: {fileID: 8913411817708140686}
+  - component: {fileID: 323702449}
+  - component: {fileID: 6208948189568524704}
   m_Layer: 7
-  m_Name: ChaseEnemy
+  m_Name: Test Enemie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +161,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300008, guid: d0f0bb7b0aae47846a42f0be578f602f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.96862745, g: 1, b: 0, a: 0.78039217}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -202,7 +205,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009799123, y: 0.1405456}
+  m_Offset: {x: -0.009799123, y: 0.31244928}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -213,22 +216,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.912596, y: 1.8749382}
+  m_Size: {x: 1.912596, y: 2.199247}
   m_EdgeRadius: 0
---- !u!114 &8913411817708140686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8913411817708140788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 320816674874f3843a08a770467b3ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followTarget: {fileID: 0}
-  speed: 3
 --- !u!114 &8913411817708140687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +238,79 @@ MonoBehaviour:
   currentStamina: 0
   canDash: 1
   isPlayer: 0
+--- !u!114 &5405711471403085973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f39b152bd87d24a949732b3e17c387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateDetection: {fileID: 6208948189568524704}
+  minWalkTime: 0.3
+  maxWalkTime: 0.6
+  randWalkTime: 0
+  minDelay: 0.3
+  maxDelay: 0.6
+  randDelay: 0
+  minForce: 2
+  maxForce: 4
+  randForce: 0
+  randDirection: {x: 0, y: 0}
+  rb: {fileID: 0}
+--- !u!114 &8913411817708140686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320816674874f3843a08a770467b3ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateDetection: {fileID: 6208948189568524704}
+  followTarget: {fileID: 0}
+  speed: 3
+--- !u!114 &323702449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58bf14d3d9850e543870251ff4ebbac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateDetection: {fileID: 6208948189568524704}
+  followTarget: {fileID: 0}
+  speed: 10
+  chaseDelayMin: 1
+  chaseDelayMax: 2
+  chaseDuration: 0.3
+--- !u!114 &6208948189568524704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99e738a6e2069f4c9623ce07431aae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateDetection: {fileID: 0}
+  enemyState: 0
+  chaseRaduis: 300
+  attackRadius: 100
 --- !u!1001 &2932844581705985581
 PrefabInstance:
   m_ObjectHideFlags: 0

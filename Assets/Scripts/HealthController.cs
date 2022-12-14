@@ -6,13 +6,15 @@ public class HealthController : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
+    [SerializeField] HealthUI healthUI;
+    public float armor;
 
+    [Header("Optional / just Player")]
     public float maxStamina;
     public float currentStamina;
     public bool canDash = true;
 
     [SerializeField] bool isPlayer;
-    [SerializeField] HealthUI healthUI;
     Animator anim;
 
     private void Awake()
@@ -43,9 +45,11 @@ public class HealthController : MonoBehaviour
     }
 
 
-    public void Hit(float damage) 
+    public void Hit(float _damage) 
     {
-        currentHealth -= damage;
+
+        _damage = _damage- armor;
+        currentHealth -= _damage;
         if (isPlayer)
         {
             anim.SetTrigger(AnimStrings.isHit);

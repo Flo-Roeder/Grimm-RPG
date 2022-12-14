@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
+public class EnemyFollow : EnemyAttackBehave
 {
 
     [SerializeField] Transform followTarget;
@@ -23,7 +23,10 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 direction = (followTarget.position-transform.position).normalized;
-        rb.velocity = direction*speed;
+        if(stateDetection.enemyState==EnemyState.chase)
+        {
+            Vector2 direction = (followTarget.position-transform.position).normalized;
+            rb.velocity = direction*speed;
+        }
     }
 }

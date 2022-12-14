@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyJumpChase : MonoBehaviour
+public class EnemyJumpChase : EnemyAttackBehave
 {
     [SerializeField] Transform followTarget;
     [SerializeField] float speed;
@@ -12,10 +12,11 @@ public class EnemyJumpChase : MonoBehaviour
     private float randChaseDelay;
     private Rigidbody2D rb;
 
+
     private void Awake()
     {
         followTarget = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponentInParent<Rigidbody2D>();
     }
     // Start is called before the first frame update
     void Start()
@@ -27,16 +28,20 @@ public class EnemyJumpChase : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 direction = (followTarget.position - transform.position).normalized;
-
-        randChaseDelay-=Time.deltaTime;
-        if (randChaseDelay<=0)
+        if (stateDetection.enemyState==EnemyState.attack)
         {
-            //TODO lerp jump?
-            rb.velocity = direction*speed;
-            StartCoroutine(ChaseReset());
-            randChaseDelay = Random.Range(chaseDelayMin, chaseDelayMax);
+            Vector2 direction = (followTarget.position - transform.position).normalized;
+
+            randChaseDelay -= Time.deltaTime;
+            if (randChaseDelay <= 0)
+            {
+                //TODO lerp jump?
+                rb.velocity = direction * speed;
+                StartCoroutine(ChaseReset());
+                randChaseDelay = Random.Range(chaseDelayMin, chaseDelayMax);
+            }
         }
+        
     }
 
     private IEnumerator ChaseReset()
