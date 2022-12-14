@@ -26,7 +26,7 @@ public class HealthController : MonoBehaviour
     {
         if (healthUI!=null)
         {
-        healthUI.SetHealthUI(maxHealth,currentHealth);
+        healthUI.SetHealthUI(maxHealth,currentHealth,isPlayer);
 
         }
     }
@@ -34,7 +34,8 @@ public class HealthController : MonoBehaviour
     private void Update()
     {
         currentStamina = currentStamina < maxStamina ? currentStamina + Time.deltaTime*10 : maxStamina;
-        if (healthUI!=null)
+        if (healthUI!=null
+            && isPlayer)
         {
         healthUI.SetStaminaUI(maxStamina,currentStamina,canDash);
 
@@ -59,7 +60,7 @@ public class HealthController : MonoBehaviour
 
         if (healthUI != null)
         {
-            healthUI.SetHealthUI(maxHealth,currentHealth);
+            healthUI.SetHealthUI(maxHealth,currentHealth,isPlayer);
 
         }
     }
@@ -73,7 +74,7 @@ public class HealthController : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
-        healthUI.SetHealthUI(maxHealth, currentHealth);
+        healthUI.SetHealthUI(maxHealth, currentHealth, isPlayer);
     }
 
     public void TakeStamina(float staminaReduce, bool playerCanDash)

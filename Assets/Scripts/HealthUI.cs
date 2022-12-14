@@ -17,10 +17,17 @@ public class HealthUI : MonoBehaviour
         
     }
 
-    public void SetHealthUI(float maxHealth, float currentHealth)
+    public void SetHealthUI(float maxHealth, float currentHealth, bool isPlayer)
     {
         healthSlider.value = currentHealth / maxHealth;
+        if (isPlayer)
+        {
         healthTextMesh.text = currentHealth + "/" + maxHealth;
+        }
+        else
+        {
+            healthTextMesh.text = currentHealth.ToString();
+        }
     }
 
     public void SetStaminaUI(float maxStamina,float currentStamina, bool canDash)
