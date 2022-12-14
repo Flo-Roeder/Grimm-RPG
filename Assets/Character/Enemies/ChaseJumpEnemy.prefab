@@ -92,6 +92,8 @@ GameObject:
   - component: {fileID: 8913411817708140682}
   - component: {fileID: 8913411817708140687}
   - component: {fileID: 5687111368875511533}
+  - component: {fileID: 3579720803916130969}
+  - component: {fileID: 1349266652412394519}
   m_Layer: 7
   m_Name: ChaseJumpEnemy
   m_TagString: Enemy
@@ -247,11 +249,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58bf14d3d9850e543870251ff4ebbac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateDetection: {fileID: 1349266652412394519}
   followTarget: {fileID: 0}
   speed: 10
   chaseDelayMin: 1
   chaseDelayMax: 2
   chaseDuration: 0.3
+--- !u!114 &3579720803916130969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f39b152bd87d24a949732b3e17c387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateDetection: {fileID: 1349266652412394519}
+  minWalkTime: 0
+  maxWalkTime: 2
+  randWalkTime: 0
+  minDelay: 1
+  maxDelay: 3
+  randDelay: 0
+  minForce: 3
+  maxForce: 6
+  randForce: 0
+  randDirection: {x: 0, y: 0}
+  rb: {fileID: 0}
+--- !u!114 &1349266652412394519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99e738a6e2069f4c9623ce07431aae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateDetection: {fileID: 0}
+  enemyState: 0
+  chaseRaduis: 200
+  attackRadius: 200
 --- !u!1001 &1496560073618370477
 PrefabInstance:
   m_ObjectHideFlags: 0
