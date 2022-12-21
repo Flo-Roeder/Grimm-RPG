@@ -43,6 +43,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] HealthController healthController;
 
+    public CollectableInventory collectableInventory;
+    public GearInventory gearInventory;
+
     private void Awake()
     {
         rb= GetComponent<Rigidbody2D>();
@@ -105,6 +108,7 @@ public class PlayerController : MonoBehaviour
                   && canDash
                   &&anim.GetBool(AnimStrings.canMove))
             {
+                anim.SetTrigger(AnimStrings.isDashing);
                 appliedDashForce = new Vector2(Mathf.Abs(anim.GetFloat(AnimStrings.xVelocity)), Mathf.Abs(anim.GetFloat(AnimStrings.yVelocity)) ) * dashSpeed;
                 StartCoroutine(DashCo());
                 canDash = false;

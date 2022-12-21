@@ -10,6 +10,7 @@ TagManager:
   - FadeCanvas
   - HealthUI
   - LevelUI
+  - CollectableUI
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - EnemyHit
   - Destructable
   - Room
-  - 
+  - Collectable
   - 
   - 
   - 
