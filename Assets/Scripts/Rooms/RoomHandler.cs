@@ -47,7 +47,7 @@ public class RoomHandler : MonoBehaviour
 
     private void TrackEnemies()
     {
-            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
             if (enemies.Length==0 )
             {
                 roomCleared = true;

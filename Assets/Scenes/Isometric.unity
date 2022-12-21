@@ -695,7 +695,7 @@ MonoBehaviour:
   damage: 2
   critChancePercentage: 50
   critMultiplier: 2
-  knockbackAmount: 100
+  knockbackAmount: 0
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
@@ -894,7 +894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.31, z: -10}
+  m_LocalPosition: {x: -0.17, y: -0.56, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -984,7 +984,7 @@ MonoBehaviour:
   damage: 8
   critChancePercentage: 30
   critMultiplier: 2
-  knockbackAmount: 120
+  knockbackAmount: 0
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.41429335, g: 0.556763, b: 0.6603774, a: 1}
+  m_Color: {r: 0.17181383, g: 0.24931766, b: 0.31132078, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -1336,7 +1336,7 @@ MonoBehaviour:
   damage: 8
   critChancePercentage: 30
   critMultiplier: 2
-  knockbackAmount: 120
+  knockbackAmount: 0
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   damage: 8
   critChancePercentage: 30
   critMultiplier: 2
-  knockbackAmount: 120
+  knockbackAmount: 0
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
@@ -1874,10 +1874,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee54d44d137a61b4c97da501e80727f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  critChancePercentage: 10
-  critMultiplier: 1.5
-  knockbackAmount: 100
+  damage: 2
+  critChancePercentage: 50
+  critMultiplier: 2
+  knockbackAmount: 0
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
@@ -2089,7 +2089,7 @@ MonoBehaviour:
   damage: 8
   critChancePercentage: 30
   critMultiplier: 2
-  knockbackAmount: 120
+  knockbackAmount: 0
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
@@ -2295,7 +2295,7 @@ MonoBehaviour:
   damage: 2
   critChancePercentage: 50
   critMultiplier: 2
-  knockbackAmount: 100
+  knockbackAmount: 0
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
@@ -2382,6 +2382,89 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1251256007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1251256008}
+  - component: {fileID: 1251256009}
+  m_Layer: 6
+  m_Name: Mask HideWalls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1251256008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251256007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.817, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2061837712}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!331 &1251256009
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251256007}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 15d0c3709176029428a0da2f8cecf0b5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 4006eb4e746748e438dcb53542d48e49, type: 3}
+  m_MaskAlphaCutoff: 0.627
+  m_FrontSortingLayerID: 875560431
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 1
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 1
+  m_SpriteSortPoint: 1
 --- !u!1 &1279054479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,10 +2797,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4357047846557938036, guid: d1564d74a916b774e928168839068f42, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 4357047846557938036, guid: d1564d74a916b774e928168839068f42, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913411817432178322, guid: d1564d74a916b774e928168839068f42, type: 3}
+      propertyPath: knockbackAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913411817432178333, guid: d1564d74a916b774e928168839068f42, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8913411817708140681, guid: d1564d74a916b774e928168839068f42, type: 3}
@@ -2726,11 +2817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8913411817708140681, guid: d1564d74a916b774e928168839068f42, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.032848
+      value: 13.22
       objectReference: {fileID: 0}
     - target: {fileID: 8913411817708140681, guid: d1564d74a916b774e928168839068f42, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.257249
+      value: 9.51
       objectReference: {fileID: 0}
     - target: {fileID: 8913411817708140681, guid: d1564d74a916b774e928168839068f42, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2766,7 +2857,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8913411817708140788, guid: d1564d74a916b774e928168839068f42, type: 3}
       propertyPath: m_Name
-      value: Test Enemie
+      value: Test Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913411817708140788, guid: d1564d74a916b774e928168839068f42, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1564d74a916b774e928168839068f42, type: 3}
@@ -3178,7 +3273,7 @@ MonoBehaviour:
   damage: 2
   critChancePercentage: 50
   critMultiplier: 2
-  knockbackAmount: 100
+  knockbackAmount: 0
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
@@ -3932,11 +4027,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3414313707610315946, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 3414313707610315946, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.31
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 3414313707610315946, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4023,6 +4118,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6191371043503540273, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: knockbackAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191371043503540273, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critChancePercentage
       value: 30
       objectReference: {fileID: 0}
@@ -4073,6 +4172,10 @@ PrefabInstance:
     - target: {fileID: 6191371043782531788, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critMultiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191371043782531788, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: knockbackAmount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6191371043782531788, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critChancePercentage
@@ -4127,6 +4230,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6191371043852114985, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: knockbackAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191371043852114985, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critChancePercentage
       value: 30
       objectReference: {fileID: 0}
@@ -4175,6 +4282,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6191371044061051681, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: knockbackAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191371044061051681, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critChancePercentage
       value: 50
       objectReference: {fileID: 0}
@@ -4213,6 +4324,10 @@ PrefabInstance:
     - target: {fileID: 6191371044452667690, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critMultiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191371044452667690, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: knockbackAmount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6191371044452667690, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critChancePercentage
@@ -4283,6 +4398,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6191371044727550576, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: knockbackAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191371044727550576, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critChancePercentage
       value: 50
       objectReference: {fileID: 0}
@@ -4335,6 +4454,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6191371044806549316, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: knockbackAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191371044806549316, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critChancePercentage
       value: 50
       objectReference: {fileID: 0}
@@ -4381,6 +4504,10 @@ PrefabInstance:
     - target: {fileID: 6191371044852788952, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critMultiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191371044852788952, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: knockbackAmount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6191371044852788952, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: critChancePercentage
@@ -4441,11 +4568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3591537568811012902, guid: 5be3fc91aa40b6e468fd208b35b2d688, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 3591537568811012902, guid: 5be3fc91aa40b6e468fd208b35b2d688, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.31
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 3591537568811012902, guid: 5be3fc91aa40b6e468fd208b35b2d688, type: 3}
       propertyPath: m_LocalPosition.z
