@@ -26,7 +26,7 @@ public class HealthController : MonoBehaviour
         currentHealth = maxHealth;
         currentStamina= maxStamina;
         anim= GetComponentInParent<Animator>();
-        DeathEventTrigger = null;
+       // DeathEventTrigger = null;
     }
 
     private void Start()

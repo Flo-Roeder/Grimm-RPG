@@ -39,6 +39,7 @@ public class EnemyMultiplier : MonoBehaviour
                     _instance.GetComponent<HealthController>().currentHealth = _maxHealth;
                     _instance.transform.localScale /= sizeDownSclaing;
                     _instance.GetComponentInChildren<Attack>().damage /= attackDownScaling;
+                    HealthController.DeathEventTrigger -= Multiplie;
                 }
             }
         }
