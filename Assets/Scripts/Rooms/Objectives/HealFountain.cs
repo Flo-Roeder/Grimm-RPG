@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealFountain : MonoBehaviour
 {
-    [SerializeField] float healRate;
+    [SerializeField] int healRate;
 
     private void OnTriggerStay2D(Collider2D collision)
     {

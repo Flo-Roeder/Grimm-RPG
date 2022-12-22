@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
-    public float maxHealth;
-    public float currentHealth;
+    public int maxHealth;
+    public int currentHealth;
     [SerializeField] HealthUI healthUI;
-    public float armor;
+    public int armor;
 
     [Header("Optional / just Player")]
     public float maxStamina;
@@ -17,11 +18,15 @@ public class HealthController : MonoBehaviour
     [SerializeField] bool isPlayer;
     Animator anim;
 
+    public delegate void DeathEvent();
+    public static event DeathEvent DeathEventTrigger;
+
     private void Awake()
     {
         currentHealth = maxHealth;
         currentStamina= maxStamina;
         anim= GetComponentInParent<Animator>();
+        DeathEventTrigger = null;
     }
 
     private void Start()
@@ -45,22 +50,16 @@ public class HealthController : MonoBehaviour
     }
 
 
-    public void Hit(float _damage) 
+    public void Hit(int _damage) 
     {
-
-        _damage = _damage- armor;
+        _damage = _damage - armor > 0 ? _damage - armor : 0;
         currentHealth -= _damage;
         if (isPlayer)
         {
             anim.SetTrigger(AnimStrings.isHit);
         }
 
-
-        if (currentHealth<=0)
-        {
-            //TODO death animation
-            gameObject.GetComponentInParent<Rigidbody2D>().gameObject.SetActive(false);
-        }
+        Death();
 
         if (healthUI != null)
         {
@@ -68,7 +67,7 @@ public class HealthController : MonoBehaviour
 
         }
     }
-    public void Heal(float heal)
+    public void Heal(int heal)
     {
         if (currentHealth < maxHealth)
         {
@@ -90,6 +89,16 @@ public class HealthController : MonoBehaviour
     public void TakeStamina(float staminaReduce)
     {
         currentStamina-= staminaReduce;
+    }
+
+    void Death()
+    {
+        if (currentHealth <= 0)
+        {
+            //TODO death animation
+            DeathEventTrigger?.Invoke();
+            gameObject.GetComponentInParent<Rigidbody2D>().gameObject.SetActive(false);
+        }
     }
 
 }

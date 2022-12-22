@@ -6,7 +6,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
 
-    public float damage;
+    public int damage;
     [SerializeField] int critChancePercentage;
     [SerializeField] float critMultiplier;
 
@@ -68,9 +68,9 @@ public class Attack : MonoBehaviour
         }
     }
 
-    private float CalculateDamage()
+    private int CalculateDamage()
     {
         int _checkCrit = Random.Range(0, 101);
-        return  _checkCrit <= critChancePercentage ? damage * critMultiplier : damage;
+        return (int)(_checkCrit <= critChancePercentage ? damage * critMultiplier : damage);
     }
 }
