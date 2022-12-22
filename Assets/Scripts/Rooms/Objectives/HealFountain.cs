@@ -10,7 +10,7 @@ public class HealFountain : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponentInChildren<HealthController>().Heal(healRate);
+            collision.GetComponentInChildren<PlayerHealthController>().Heal(healRate);
         }
     }
 }

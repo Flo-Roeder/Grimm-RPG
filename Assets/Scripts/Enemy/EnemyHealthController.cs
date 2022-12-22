@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthController : MonoBehaviour
+public class EnemyHealthController : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
@@ -16,7 +16,6 @@ public class HealthController : MonoBehaviour
     public bool canDash = true;
 
     [SerializeField] bool isPlayer;
-    Animator anim;
 
     public delegate void DeathEvent();
     public static event DeathEvent DeathEventTrigger;
@@ -25,28 +24,20 @@ public class HealthController : MonoBehaviour
     {
         currentHealth = maxHealth;
         currentStamina= maxStamina;
-        anim= GetComponentInParent<Animator>();
-       // DeathEventTrigger = null;
     }
 
     private void Start()
     {
         if (healthUI!=null)
         {
-        healthUI.SetHealthUI(maxHealth,currentHealth,isPlayer);
-
+            healthUI.SetHealthUI(maxHealth,currentHealth,isPlayer);
         }
+
     }
 
     private void Update()
     {
         currentStamina = currentStamina < maxStamina ? currentStamina + Time.deltaTime*10 : maxStamina;
-        if (healthUI!=null
-            && isPlayer)
-        {
-        healthUI.SetStaminaUI(maxStamina,currentStamina,canDash);
-
-        }
     }
 
 
@@ -54,10 +45,7 @@ public class HealthController : MonoBehaviour
     {
         _damage = _damage - armor > 0 ? _damage - armor : 0;
         currentHealth -= _damage;
-        if (isPlayer)
-        {
-            anim.SetTrigger(AnimStrings.isHit);
-        }
+
 
         Death();
 
@@ -97,7 +85,7 @@ public class HealthController : MonoBehaviour
         {
             //TODO death animation
             DeathEventTrigger?.Invoke();
-            gameObject.GetComponentInParent<Rigidbody2D>().gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 

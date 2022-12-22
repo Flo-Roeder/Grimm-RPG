@@ -38,11 +38,20 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<HealthController>())
+        if (collision.GetComponent<EnemyHealthController>())
         {
-            HealthController healthController= collision.GetComponent<HealthController>();
+            EnemyHealthController healthController= collision.GetComponent<EnemyHealthController>();
             rb=healthController.GetComponentInParent<Rigidbody2D>();
             knockbackDirection = (rb.gameObject.transform.position-transform.position).normalized;
+            knockbackTimer = knockbackTime;
+            knockbackForce = knockbackAmount;
+            healthController.Hit(CalculateDamage());
+        }
+        else if (collision.GetComponent<PlayerHealthController>())
+        {
+            PlayerHealthController healthController = collision.GetComponent<PlayerHealthController>();
+            rb = healthController.GetComponentInParent<Rigidbody2D>();
+            knockbackDirection = (rb.gameObject.transform.position - transform.position).normalized;
             knockbackTimer = knockbackTime;
             knockbackForce = knockbackAmount;
             healthController.Hit(CalculateDamage());
@@ -51,12 +60,27 @@ public class Attack : MonoBehaviour
 
     private void OnEnable()
     {
-        if (this.gameObject.GetComponentInParent<HealthController>())
+        if (this.gameObject.GetComponentInParent<EnemyHealthController>())
         {
-            HealthController healthController = this.gameObject.GetComponentInParent<HealthController>();
+            EnemyHealthController healthController = this.gameObject.GetComponentInParent<EnemyHealthController>();
             if (healthController.currentStamina>staminaCost)
             {
             healthController.TakeStamina(staminaCost);
+            }
+            else
+            {
+                //TODO stamina stagger
+                //stamina regen stop for short period
+                //no further attacks
+                //reduced movespeed?
+            }
+        }
+        else if (this.gameObject.GetComponentInParent<PlayerHealthController>())
+        {
+            PlayerHealthController healthController = this.gameObject.GetComponentInParent<PlayerHealthController>();
+            if (healthController.currentStamina > staminaCost)
+            {
+                healthController.TakeStamina(staminaCost);
             }
             else
             {

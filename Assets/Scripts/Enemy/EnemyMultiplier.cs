@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMultiplier : MonoBehaviour
 {
 
-    [SerializeField] HealthController healthController;
+    [SerializeField] EnemyHealthController healthController;
     [SerializeField] GameObject[] spawnOnDeath;
     [SerializeField] float sizeDownSclaing;
     [SerializeField] int healthDownScaling;
@@ -16,7 +16,7 @@ public class EnemyMultiplier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HealthController.DeathEventTrigger += Multiplie;
+        EnemyHealthController.DeathEventTrigger += Multiplie;
     }
 
     // Update is called once per frame
@@ -35,11 +35,11 @@ public class EnemyMultiplier : MonoBehaviour
                 {
                     GameObject _instance = Instantiate(item,transform.position,Quaternion.identity);
                     _instance.GetComponent<EnemyMultiplier>().waveCounter= waveCounter+1;
-                    int _maxHealth = _instance.GetComponent<HealthController>().maxHealth/=healthDownScaling;
-                    _instance.GetComponent<HealthController>().currentHealth = _maxHealth;
+                    int _maxHealth = _instance.GetComponent<EnemyHealthController>().maxHealth/=healthDownScaling;
+                    _instance.GetComponent<EnemyHealthController>().currentHealth = _maxHealth;
                     _instance.transform.localScale /= sizeDownSclaing;
                     _instance.GetComponentInChildren<Attack>().damage /= attackDownScaling;
-                    HealthController.DeathEventTrigger -= Multiplie;
+                    EnemyHealthController.DeathEventTrigger -= Multiplie;
                 }
             }
         }

@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]float dashStaminaCost;
 
 
-    [SerializeField] HealthController healthController;
+    [SerializeField] PlayerHealthController healthController;
 
     public CollectableInventory collectableInventory;
     public GearInventory gearInventory;

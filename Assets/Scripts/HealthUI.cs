@@ -12,21 +12,21 @@ public class HealthUI : MonoBehaviour
     [SerializeField] Slider staminaSlider;
     [SerializeField] GameObject dashCooldownImage;
 
-    private void Update()
+    private void Start()
     {
         
     }
 
-    public void SetHealthUI(float maxHealth, float currentHealth, bool isPlayer)
+    public void SetHealthUI(float _maxHealth, float _currentHealth, bool isPlayer)
     {
-        healthSlider.value = currentHealth / maxHealth;
+        healthSlider.value = _currentHealth / _maxHealth;
         if (isPlayer)
         {
-        healthTextMesh.text = currentHealth + "/" + maxHealth;
+            healthTextMesh.text = _currentHealth + "/" + _maxHealth;
         }
         else
         {
-            healthTextMesh.text = currentHealth.ToString();
+            healthTextMesh.text = _currentHealth.ToString();
         }
     }
 
