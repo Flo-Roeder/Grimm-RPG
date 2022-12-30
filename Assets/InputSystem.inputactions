@@ -67,6 +67,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ReloadRun",
+                    "type": "Button",
+                    "id": "444c3de9-ab0a-42b2-9dba-cfd45d16755b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "2dfbc35a-3c1c-410c-b1ae-0f6f535cee88",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Zoom",
+                    "type": "Value",
+                    "id": "d4c4b00f-1d0b-4075-abac-41bcf92532b4",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -261,7 +288,7 @@
                     "name": "",
                     "id": "1e10c69a-b749-441f-8e3d-02bd212e39ca",
                     "path": "<Keyboard>/h",
-                    "interactions": "",
+                    "interactions": "Hold(duration=1,pressPoint=1)",
                     "processors": "",
                     "groups": "",
                     "action": "Emergency Heal",
@@ -289,6 +316,61 @@
                     "action": "TimeChange",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2303e440-e44c-46f7-abfe-8e8e7ea08447",
+                    "path": "<Keyboard>/r",
+                    "interactions": "Hold(duration=1,pressPoint=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReloadRun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "26fba382-2b52-4ba0-82e4-5de91d3d430e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "9cd7eaf7-f224-48af-9565-f9259bcf8a60",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "115ef8fc-f3f5-4152-ad50-46fc587b2c46",
+                    "path": "<Keyboard>/numpadMinus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "07afafbc-2e68-44f4-a770-cb584ceae092",
+                    "path": "<Keyboard>/numpadPlus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
