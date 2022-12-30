@@ -9,19 +9,18 @@ public class PlayerHealthController : MonoBehaviour
     public int armor;
 
     [Header("Optional / just Player")]
-    public float maxStamina;
-    public float currentStamina;
     public bool canDash = true;
 
     [SerializeField] bool isPlayer;
     Animator anim;
 
-    [SerializeField] PlayerStats playerStats;
+    public PlayerStats playerStats;
+
 
     private void Awake()
     {
-        currentStamina = maxStamina;
-        playerStats.currentHealth=playerStats.maxHealth;
+        playerStats.currentHealth = playerStats.maxHealth;
+        playerStats.currentStamina= playerStats.maxStamina;
         anim = GetComponentInParent<Animator>();
     }
 
@@ -36,7 +35,9 @@ public class PlayerHealthController : MonoBehaviour
 
     private void Update()
     {
-        currentStamina = currentStamina < maxStamina ? currentStamina + Time.deltaTime * 10 : maxStamina;
+        playerStats.currentStamina = (playerStats.currentStamina < playerStats.maxStamina ? playerStats.currentStamina + Time.deltaTime * playerStats.regenStamina : playerStats.maxStamina);
+        healthUI.SetStaminaUI(playerStats.maxStamina, playerStats.currentStamina, canDash);
+
     }
 
 
@@ -61,15 +62,16 @@ public class PlayerHealthController : MonoBehaviour
         healthUI.SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, isPlayer);
     }
 
-    public void TakeStamina(float staminaReduce, bool playerCanDash)
+    public void TakeStamina(int staminaReduce, bool playerCanDash)
     {
-        currentStamina -= staminaReduce;
+        playerStats.currentStamina -= staminaReduce;
         canDash = playerCanDash;
     }
 
-    public void TakeStamina(float staminaReduce)
+    public void TakeStamina(int staminaReduce)
     {
-        currentStamina -= staminaReduce;
+        playerStats.currentStamina -= staminaReduce;
+
     }
 
     void Death()

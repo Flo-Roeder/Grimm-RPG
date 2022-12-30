@@ -17,7 +17,7 @@ public class Attack : MonoBehaviour
 
     private Vector2 knockbackDirection;
     private Rigidbody2D rb;
-    [SerializeField] float staminaCost;
+    [SerializeField] int staminaCost;
 
     private void FixedUpdate()
     {
@@ -78,7 +78,7 @@ public class Attack : MonoBehaviour
         else if (this.gameObject.GetComponentInParent<PlayerHealthController>())
         {
             PlayerHealthController healthController = this.gameObject.GetComponentInParent<PlayerHealthController>();
-            if (healthController.currentStamina > staminaCost)
+            if (healthController.playerStats.currentStamina > staminaCost)
             {
                 healthController.TakeStamina(staminaCost);
             }

@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     public bool canDash=true;
     public float dashCooldown;
     private float dashTimer;
-    [SerializeField]float dashStaminaCost;
+    [SerializeField]int dashStaminaCost;
 
 
     [SerializeField] PlayerHealthController healthController;
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if (dashStaminaCost<=healthController.currentStamina
+        if (dashStaminaCost<=healthController.playerStats.currentStamina
             && moveInput!=Vector2.zero)
         {
             if (context.started

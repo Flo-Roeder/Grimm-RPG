@@ -11,7 +11,8 @@ public class PlayerStats : ScriptableObject
     public int armor;
 
     public int maxStamina;
-    public int currentStamina;
+    public float currentStamina;
+    public float regenStamina;
 
     public float moveSpeed;
     public float dashSpeed;
@@ -30,5 +31,6 @@ public class PlayerStats : ScriptableObject
     private void Awake()
     {
         currentHealth = maxHealth;
+        currentStamina= maxStamina;
     }
 }

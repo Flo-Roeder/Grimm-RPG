@@ -12,7 +12,7 @@ public class HealthUI : MonoBehaviour
     [SerializeField] Slider staminaSlider;
     [SerializeField] GameObject dashCooldownImage;
 
-    private void Start()
+    private void Update()
     {
         
     }
