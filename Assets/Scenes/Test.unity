@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &19537807 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 566804342537783442, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
+  m_PrefabInstance: {fileID: 4299502116351348646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215678ede6cfa4241ada38674634b9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &54243345
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +952,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &370939374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370939362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95782b0e30e788148bd5a221c3965cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 0
+  healthUI: {fileID: 19537807}
+  armor: 0
+  maxStamina: 0
+  currentStamina: 0
+  canDash: 1
+  isPlayer: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,6 +1611,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &658516229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5214044004351210782, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+  m_PrefabInstance: {fileID: 3414313708304283962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &658516233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658516229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79996e489258c54d8922fc50419c8c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthUI: {fileID: 135953217}
+  armor: 0
+  maxStamina: 100
+  currentStamina: 0
+  canDash: 1
+  isPlayer: 1
+  playerStats: {fileID: 11400000, guid: fb7f6208d45157e40b697437a4402aad, type: 2}
 --- !u!1 &710390092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,6 +3868,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c180691eaa08df346ba3b0499bb8dbc2, type: 2}
     - target: {fileID: 3414313707610315950, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: healthController
+      value: 
+      objectReference: {fileID: 658516233}
+    - target: {fileID: 3414313707610315950, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: collectableInventory
+      value: 
+      objectReference: {fileID: 11400000, guid: ae3b083c6aa3b1f44b2c896693d7d031, type: 2}
+    - target: {fileID: 3414313707610315950, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: collectibleInventory
       value: 
       objectReference: {fileID: 11400000, guid: ae3b083c6aa3b1f44b2c896693d7d031, type: 2}
@@ -3832,7 +3895,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6191371044465573636, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
 --- !u!1001 &3591537569292143553
 PrefabInstance:
@@ -3922,13 +3986,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4299502117276869109, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
+      propertyPath: healthController
+      value: 
+      objectReference: {fileID: 370939374}
     - target: {fileID: 4618488386787059714, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
       propertyPath: m_Name
       value: Multiplier
       objectReference: {fileID: 0}
     - target: {fileID: 4618488386787059836, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4618488386787059838, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
       propertyPath: m_Color.a
@@ -3980,9 +4048,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4618488387566227045, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4618488386787059833, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
 --- !u!1001 &5868407426752706601
 PrefabInstance:
