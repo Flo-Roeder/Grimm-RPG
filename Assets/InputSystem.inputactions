@@ -288,7 +288,7 @@
                     "name": "",
                     "id": "1e10c69a-b749-441f-8e3d-02bd212e39ca",
                     "path": "<Keyboard>/h",
-                    "interactions": "Hold(duration=1,pressPoint=1)",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Emergency Heal",

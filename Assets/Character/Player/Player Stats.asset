@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Player Stats
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 179
+  currentHealth: 100
   armor: 2
   maxStamina: 100
-  currentStamina: 0
+  currentStamina: 100
+  regenStamina: 7
   moveSpeed: 10
   dashSpeed: 20
   dashTime: 0.2

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -81,6 +82,7 @@ public class PlayerHealthController : MonoBehaviour
             //TODO death animation
             //DeathEventTrigger?.Invoke();
             gameObject.GetComponentInParent<Rigidbody2D>().gameObject.SetActive(false);
+            SceneManager.LoadScene(0);
         }
     }
 
