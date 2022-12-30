@@ -150,10 +150,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4618488386787059714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7cae780c7139be40bb78d89fef06f03, type: 3}
+  m_Script: {fileID: 11500000, guid: 95782b0e30e788148bd5a221c3965cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 30
   currentHealth: 0
   healthUI: {fileID: 566804342537783442}
   armor: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   - {fileID: 4618488386787059714}
   - {fileID: 4618488386787059714}
   sizeDownSclaing: 2
-  healthDownScaling: 2
+  healthDownScaling: 3
   attackDownScaling: 2
   maxWaves: 2
   waveCounter: 0

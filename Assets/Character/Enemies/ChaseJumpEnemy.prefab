@@ -90,10 +90,10 @@ GameObject:
   - component: {fileID: 8913411817708140680}
   - component: {fileID: 8913411817708140683}
   - component: {fileID: 8913411817708140682}
-  - component: {fileID: 8913411817708140687}
   - component: {fileID: 5687111368875511533}
   - component: {fileID: 3579720803916130969}
   - component: {fileID: 1349266652412394519}
+  - component: {fileID: 4438494482994314632}
   m_Layer: 7
   m_Name: ChaseJumpEnemy
   m_TagString: Enemy
@@ -217,26 +217,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.912596, y: 1.8033239}
   m_EdgeRadius: 0
---- !u!114 &8913411817708140687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8913411817708140788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7cae780c7139be40bb78d89fef06f03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 0
-  healthUI: {fileID: 132520420}
-  armor: 0
-  maxStamina: 0
-  currentStamina: 0
-  canDash: 1
-  isPlayer: 0
 --- !u!114 &5687111368875511533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +275,26 @@ MonoBehaviour:
   enemyState: 0
   chaseRaduis: 200
   attackRadius: 200
+--- !u!114 &4438494482994314632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95782b0e30e788148bd5a221c3965cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 0
+  healthUI: {fileID: 132520420}
+  armor: 0
+  maxStamina: 0
+  currentStamina: 0
+  canDash: 1
+  isPlayer: 0
 --- !u!1001 &1496560073618370477
 PrefabInstance:
   m_ObjectHideFlags: 0

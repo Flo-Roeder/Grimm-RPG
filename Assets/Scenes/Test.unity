@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &19537807 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 566804342537783442, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
-  m_PrefabInstance: {fileID: 4299502116351348646}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 215678ede6cfa4241ada38674634b9a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &54243345
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,51 +916,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365808783}
   m_CullTransparentMesh: 1
---- !u!1 &370939362 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4618488386787059714, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
-  m_PrefabInstance: {fileID: 4299502116351348646}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &370939373
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370939362}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 436b9d6d78b1699408f472999299197f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &370939374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370939362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95782b0e30e788148bd5a221c3965cc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 0
-  healthUI: {fileID: 19537807}
-  armor: 0
-  maxStamina: 0
-  currentStamina: 0
-  canDash: 1
-  isPlayer: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,31 +4171,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 566804342661833090, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 566804342661833090, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4299502117276869109, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
-      propertyPath: healthController
-      value: 
-      objectReference: {fileID: 370939374}
     - target: {fileID: 4618488386787059714, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
       propertyPath: m_Name
       value: Multiplier
       objectReference: {fileID: 0}
     - target: {fileID: 4618488386787059714, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618488386787059836, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
-      propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4618488386787059838, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
-      propertyPath: m_Color.a
-      value: 0.78039217
       objectReference: {fileID: 0}
     - target: {fileID: 4618488386787059839, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
       propertyPath: m_RootOrder
@@ -4297,12 +4229,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4618488387566227045, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4618488386787059833, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ca534f0e1aa82240aa9382c00d41c98, type: 3}
 --- !u!1001 &5868407426752706601
 PrefabInstance:

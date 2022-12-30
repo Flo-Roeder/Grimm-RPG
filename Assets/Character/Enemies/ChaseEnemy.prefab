@@ -90,10 +90,10 @@ GameObject:
   - component: {fileID: 8913411817708140680}
   - component: {fileID: 8913411817708140683}
   - component: {fileID: 8913411817708140682}
-  - component: {fileID: 8913411817708140687}
   - component: {fileID: 3353124169809710287}
   - component: {fileID: 8913411817708140686}
   - component: {fileID: 7591265199890155213}
+  - component: {fileID: 5298134740157899683}
   m_Layer: 7
   m_Name: ChaseEnemy
   m_TagString: Enemy
@@ -217,26 +217,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.912596, y: 1.8749382}
   m_EdgeRadius: 0
---- !u!114 &8913411817708140687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8913411817708140788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7cae780c7139be40bb78d89fef06f03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 0
-  healthUI: {fileID: 4357047846381000804}
-  armor: 0
-  maxStamina: 0
-  currentStamina: 0
-  canDash: 1
-  isPlayer: 0
 --- !u!114 &3353124169809710287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +272,26 @@ MonoBehaviour:
   enemyState: 0
   chaseRaduis: 300
   attackRadius: 0
+--- !u!114 &5298134740157899683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95782b0e30e788148bd5a221c3965cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 15
+  currentHealth: 0
+  healthUI: {fileID: 4357047846381000804}
+  armor: 0
+  maxStamina: 0
+  currentStamina: 0
+  canDash: 1
+  isPlayer: 0
 --- !u!1001 &2932844581705985581
 PrefabInstance:
   m_ObjectHideFlags: 0
