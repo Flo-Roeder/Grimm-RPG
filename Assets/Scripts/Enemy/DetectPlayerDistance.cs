@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum EnemyState
 {
@@ -17,6 +18,11 @@ public class DetectPlayerDistance : EnemyAttackBehave
     [SerializeField] float chaseRaduis;
     [SerializeField] float attackRadius;
 
+    public Color idleColor;
+    public Color chaseColor;
+    public Color attackColor;
+    [SerializeField] Image healthFill;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -30,14 +36,19 @@ public class DetectPlayerDistance : EnemyAttackBehave
         if (distance<attackRadius)
         {
             enemyState = EnemyState.attack;
+            healthFill.color = attackColor;
         }
         else if (distance<chaseRaduis)
         {
             enemyState = EnemyState.chase;
+            healthFill.color = chaseColor;
+
         }
         else
         {
             enemyState = EnemyState.idle;
+            healthFill.color = idleColor;
+
         }
     }
 

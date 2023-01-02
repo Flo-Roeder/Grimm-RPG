@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 8913411817708140680}
   - component: {fileID: 8913411817708140683}
   - component: {fileID: 8913411817708140682}
-  - component: {fileID: 8913411817708140687}
   - component: {fileID: 5405711471403085973}
   - component: {fileID: 8913411817708140686}
   - component: {fileID: 323702449}
@@ -219,26 +218,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.912596, y: 2.199247}
   m_EdgeRadius: 0
---- !u!114 &8913411817708140687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8913411817708140788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7cae780c7139be40bb78d89fef06f03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 0
-  healthUI: {fileID: 4357047846381000804}
-  armor: 0
-  maxStamina: 0
-  currentStamina: 0
-  canDash: 1
-  isPlayer: 0
 --- !u!114 &5405711471403085973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +291,10 @@ MonoBehaviour:
   enemyState: 0
   chaseRaduis: 300
   attackRadius: 100
+  idleColor: {r: 0, g: 0.27328658, b: 1, a: 1}
+  chaseColor: {r: 1, g: 0.8933855, b: 0, a: 1}
+  attackColor: {r: 1, g: 0, b: 0, a: 1}
+  healthFill: {fileID: 0}
 --- !u!114 &1034252547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,11 +307,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7f42a61858aad44b1b00cc960eac95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthController: {fileID: 8913411817708140687}
+  healthController: {fileID: 0}
   spawnOnDeath:
   - {fileID: 8913411817708140788}
   - {fileID: 8913411817708140788}
   - {fileID: 8913411817708140788}
+  sizeDownSclaing: 0
+  healthDownScaling: 0
+  attackDownScaling: 0
+  maxWaves: 0
+  waveCounter: 0
 --- !u!1001 &2932844581705985581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -434,17 +422,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78ada1adf64a0d54f870c624debce4a1, type: 3}
---- !u!114 &4357047846381000804 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1496560073582327369, guid: 78ada1adf64a0d54f870c624debce4a1, type: 3}
-  m_PrefabInstance: {fileID: 2932844581705985581}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 215678ede6cfa4241ada38674634b9a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &4357047847171111750 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1496560072761808235, guid: 78ada1adf64a0d54f870c624debce4a1, type: 3}

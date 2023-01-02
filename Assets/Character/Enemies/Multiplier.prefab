@@ -234,6 +234,10 @@ MonoBehaviour:
   enemyState: 0
   chaseRaduis: 300
   attackRadius: 100
+  idleColor: {r: 0, g: 0.2927639, b: 0.9716981, a: 1}
+  chaseColor: {r: 1, g: 0.89754987, b: 0.0047169924, a: 1}
+  attackColor: {r: 0.8396226, g: 0, b: 0.064977355, a: 1}
+  healthFill: {fileID: 566804342661833088}
 --- !u!114 &4299502117276869109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,5 +465,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 215678ede6cfa4241ada38674634b9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &566804342661833088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1496560073692208987, guid: 78ada1adf64a0d54f870c624debce4a1, type: 3}
+  m_PrefabInstance: {fileID: 1376246604842221275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -472,6 +472,10 @@ MonoBehaviour:
   enemyState: 0
   chaseRaduis: 300
   attackRadius: 30
+  idleColor: {r: 0, g: 0.2535498, b: 1, a: 1}
+  chaseColor: {r: 1, g: 0.85797274, b: 0, a: 1}
+  attackColor: {r: 1, g: 0, b: 0, a: 1}
+  healthFill: {fileID: 0}
 --- !u!95 &1998698811
 Animator:
   serializedVersion: 4

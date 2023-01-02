@@ -20,6 +20,9 @@ public class EnemyHealthController : MonoBehaviour
     public delegate void DeathEvent();
     public static event DeathEvent DeathEventTrigger;
 
+    public delegate void ColorChange();
+    public static event ColorChange ColorChangeTrigger;
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -88,5 +91,6 @@ public class EnemyHealthController : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
+
 
 }

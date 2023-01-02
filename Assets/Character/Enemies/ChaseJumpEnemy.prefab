@@ -74,7 +74,7 @@ MonoBehaviour:
   damage: 10
   critChancePercentage: 0
   critMultiplier: 0
-  knockbackAmount: 500
+  knockbackAmount: 0
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 0

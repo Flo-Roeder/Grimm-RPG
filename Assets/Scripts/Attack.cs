@@ -18,6 +18,7 @@ public class Attack : MonoBehaviour
     private Vector2 knockbackDirection;
     private Rigidbody2D rb;
     [SerializeField] int staminaCost;
+    
 
     private void FixedUpdate()
     {

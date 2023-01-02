@@ -74,7 +74,7 @@ MonoBehaviour:
   damage: 10
   critChancePercentage: 0
   critMultiplier: 0
-  knockbackAmount: 700
+  knockbackAmount: 0
   knockbackTime: 0.15
   knockbackTimer: 0
   staminaCost: 0
@@ -272,6 +272,10 @@ MonoBehaviour:
   enemyState: 0
   chaseRaduis: 300
   attackRadius: 0
+  idleColor: {r: 0, g: 0.2739539, b: 1, a: 1}
+  chaseColor: {r: 1, g: 0.96763766, b: 0, a: 1}
+  attackColor: {r: 1, g: 0, b: 0, a: 1}
+  healthFill: {fileID: 0}
 --- !u!114 &5298134740157899683
 MonoBehaviour:
   m_ObjectHideFlags: 0
