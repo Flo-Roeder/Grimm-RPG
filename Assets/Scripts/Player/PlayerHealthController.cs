@@ -23,6 +23,7 @@ public class PlayerHealthController : MonoBehaviour
         playerStats.currentHealth = playerStats.maxHealth;
         playerStats.currentStamina= playerStats.maxStamina;
         anim = GetComponentInParent<Animator>();
+        healthUI= GameObject.FindGameObjectWithTag("HealthUI").GetComponent<HealthUI>();
     }
 
     private void Start()
