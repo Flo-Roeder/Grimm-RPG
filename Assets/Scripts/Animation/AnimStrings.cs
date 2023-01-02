@@ -10,7 +10,8 @@ internal class AnimStrings
     internal static string isAttacking = "isAttacking";
     internal static string canMove = "canMove";
     internal static string fadeOut = "fadeOut";
+    internal static string fadeIn ="fadeIn";
     internal static string isHit = "isHit";
     internal static string isDashing = "isDashing";
-
+    internal static string roomCleared="roomCleared";
 }

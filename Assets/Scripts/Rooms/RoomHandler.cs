@@ -14,9 +14,15 @@ public class RoomHandler : MonoBehaviour
     public bool roomStarted;
 
     public float trackEnemiesDelay=1f;
+
+    Animator fadeCanvasAnimator;
+
+
     private void Awake()
     {
-   //     deactivateOnClear.SetActive(true);
+        fadeCanvasAnimator = GameObject.FindGameObjectWithTag("FadeCanvas").GetComponent<Animator>();
+
+        //     deactivateOnClear.SetActive(true);
         activateOnClear.SetActive(false);
         activateOnStart.SetActive(false);
     //    deactivateOnStart.SetActive(true);
@@ -50,7 +56,11 @@ public class RoomHandler : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
             if (enemies.Length==0 )
             {
-                roomCleared = true;
+                if (!roomCleared)
+                {
+                    roomCleared = true;
+                    fadeCanvasAnimator.SetTrigger(AnimStrings.roomCleared);
+                }
             }
     }
 

@@ -14,6 +14,7 @@ public class NextRoom : MonoBehaviour
     private void Awake()
     {
         fadeCanvasAnimator = GameObject.FindGameObjectWithTag("FadeCanvas").GetComponent<Animator>();
+        //fadeCanvasAnimator.SetTrigger(AnimStrings.fadeIn);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

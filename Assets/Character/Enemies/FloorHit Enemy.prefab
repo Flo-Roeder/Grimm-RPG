@@ -475,7 +475,7 @@ MonoBehaviour:
   idleColor: {r: 0, g: 0.2535498, b: 1, a: 1}
   chaseColor: {r: 1, g: 0.85797274, b: 0, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
-  healthFill: {fileID: 0}
+  healthFill: {fileID: 4357047846557938038}
 --- !u!95 &1998698811
 Animator:
   serializedVersion: 4
@@ -630,6 +630,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 215678ede6cfa4241ada38674634b9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4357047846557938038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1496560073692208987, guid: 78ada1adf64a0d54f870c624debce4a1, type: 3}
+  m_PrefabInstance: {fileID: 2932844581705985581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &4357047847171111750 stripped
