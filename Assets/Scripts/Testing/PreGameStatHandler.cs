@@ -105,7 +105,7 @@ public class PreGameStatHandler : MonoBehaviour
         UpdateUI();
     }
 
-    public void CritMultiChange(int value)
+    public void CritMultiChange(float value)
     {
         playerStats.critMultiplier += value;
         UpdateUI();
@@ -123,7 +123,7 @@ public class PreGameStatHandler : MonoBehaviour
         UpdateUI();
     }
 
-    public void KnockbackTimeChange(int value)
+    public void KnockbackTimeChange(float value)
     {
         playerStats.knockbackTime+=value;
         UpdateUI();
@@ -143,16 +143,27 @@ public class PreGameStatHandler : MonoBehaviour
         playerStats.critChancePercentage=defaultStats.critChancePercentage;
         playerStats.critMultiplier=defaultStats.critMultiplier;
         playerStats.attackStaminaCost= defaultStats.attackStaminaCost;
+        playerStats.knockbackAmount=defaultStats.knockbackAmount;
+        playerStats.knockbackTime=defaultStats.knockbackTime;
         UpdateUI();
     }
 
     private void UpdateUI() 
     {
         maxHealthText.text = playerStats.maxHealth.ToString();
+        armorText.text = playerStats.armor.ToString();
+        maxStaminaText.text = playerStats.maxStamina.ToString();
+        regenStaminaText.text = playerStats.regenStamina.ToString();
         moveSpeedText.text = playerStats.moveSpeed.ToString();
         dashSpeedText.text = playerStats.dashSpeed.ToString();
         dashCooldownText.text = playerStats.dashCooldown.ToString();
         dashStaminaCostText.text = playerStats.dashStaminaCost.ToString();
+        attackDamgeText.text=playerStats.attackDamage.ToString();
+        critChanceText.text=playerStats.critChancePercentage.ToString();
+        critMultiText.text=playerStats.critMultiplier.ToString();
+        attackStaminaCostText.text=playerStats.attackStaminaCost.ToString();
+        knockbackForceText.text=playerStats.knockbackAmount.ToString();
+        knockbackTimeText.text=playerStats.knockbackTime.ToString();
     }
 
     public void StartGame()
