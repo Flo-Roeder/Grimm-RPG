@@ -28,11 +28,7 @@ public class PlayerHealthController : MonoBehaviour
 
     private void Start()
     {
-        if (healthUI != null)
-        {
-            healthUI.SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, isPlayer);
-        }
-
+        SetHealthUI();
     }
 
     private void Update()
@@ -91,5 +87,14 @@ public class PlayerHealthController : MonoBehaviour
     {
         armor=playerStats.armor;
         
+    }
+
+    public void SetHealthUI()
+    {
+        if (healthUI != null)
+        {
+            healthUI.SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, isPlayer);
+        }
+
     }
 }

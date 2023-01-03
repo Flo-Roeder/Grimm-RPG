@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfeb97d8c74271343917d0fb1c286c60, type: 3}
   m_Name: Player Collectable Inventory
   m_EditorClassIdentifier: 
-  coins: 5
+  coins: 40
   bombs: 5
   keys: 3
