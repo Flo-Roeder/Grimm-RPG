@@ -46,10 +46,12 @@ public class PlayerController : MonoBehaviour
     public CollectableInventory collectableInventory;
     public GearInventory gearInventory;
 
+    [SerializeField] PlayerStats playerStats;
     private void Awake()
     {
         rb= GetComponent<Rigidbody2D>();
         anim= GetComponent<Animator>();
+        SetStats();
     }
 
     void Start()
@@ -126,10 +128,19 @@ public class PlayerController : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started
+            && playerStats.attackStaminaCost<=playerStats.currentStamina)
         {
             anim.SetTrigger(AnimStrings.isAttacking);
         }
     }
 
+    void SetStats()
+    {
+        moveSpeed = playerStats.moveSpeed;
+        dashSpeed = playerStats.dashSpeed;
+        dashTime = playerStats.dashTime;
+        dashCooldown = playerStats.dashCooldown;
+        dashStaminaCost = (int)playerStats.dashStaminaCost;
+    }
 }

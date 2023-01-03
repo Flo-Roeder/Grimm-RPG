@@ -14,10 +14,12 @@ public class EnemyIdleAround : EnemyAttackBehave
 
     [SerializeField]private Vector2 randDirection;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         rb= GetComponentInParent<Rigidbody2D>();
         randWalkTime = Random.Range(minWalkTime, maxWalkTime);
         CalculateRandomness();
@@ -29,18 +31,27 @@ public class EnemyIdleAround : EnemyAttackBehave
         if (stateDetection.enemyState==EnemyState.idle)
         {
             if (randDelay <= 0
-            && randWalkTime <= 0)
+            && randWalkTime <= 0) //calculate stuff
             {
                 CalculateRandomness();
             }
-            else if (randWalkTime <= 0)
+            else if (randWalkTime <= 0) //wait for next move
             {
                 randDelay -= Time.deltaTime;
                 rb.velocity = Vector2.zero;
+                if (anim!=null)
+                {
+                anim.SetBool(AnimStrings.isMoving, false);
+                }
             }
-            else
+            else //move
             {
                 randWalkTime -= Time.deltaTime;
+                MakeMove();
+                if (anim!=null)
+                {
+                anim?.SetBool(AnimStrings.isMoving, true);
+                }
             }
         }
         
@@ -48,10 +59,10 @@ public class EnemyIdleAround : EnemyAttackBehave
 
     private void FixedUpdate()
     {
-        if (randDelay<=0)
-        {
-            MakeMove();
-        }
+    //    if (randDelay<=0)
+    //    {
+    //        MakeMove();
+    //    }
     }
 
     private void MakeMove()

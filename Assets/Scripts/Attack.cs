@@ -18,7 +18,27 @@ public class Attack : MonoBehaviour
     private Vector2 knockbackDirection;
     private Rigidbody2D rb;
     [SerializeField] int staminaCost;
-    
+
+    [SerializeField] bool isPlayer;
+    [SerializeField] PlayerStats playerStats;
+
+    private void Awake()
+    {
+        SetStats();
+    }
+
+    private void SetStats()
+    {
+        if (isPlayer)
+        {
+            damage = playerStats.attackDamage;
+            critChancePercentage = playerStats.critChancePercentage;
+            critMultiplier = playerStats.critMultiplier;
+            knockbackAmount = playerStats.knockbackAmount;
+            knockbackTime = playerStats.knockbackTime;
+            staminaCost = (int)playerStats.attackStaminaCost;
+        }
+    }
 
     private void FixedUpdate()
     {

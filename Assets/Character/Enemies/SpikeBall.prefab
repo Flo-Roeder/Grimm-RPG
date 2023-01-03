@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023038447, y: 0.16979402}
+  m_Offset: {x: -0.036590517, y: -0.15071192}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0556492, y: 1.2486372}
+  m_Size: {x: 0.69787514, y: 0.6076254}
   m_EdgeRadius: 0
 --- !u!114 &8913411817432178322
 MonoBehaviour:
@@ -78,6 +78,8 @@ MonoBehaviour:
   knockbackTime: 0.15
   knockbackTimer: 0
   staminaCost: 0
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &8913411817708140788
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,8 +96,9 @@ GameObject:
   - component: {fileID: 8913411817708140686}
   - component: {fileID: 7591265199890155213}
   - component: {fileID: 5298134740157899683}
+  - component: {fileID: 436291710927411729}
   m_Layer: 7
-  m_Name: ChaseEnemy
+  m_Name: SpikeBall
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 8913411817708140788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8913411817432178333}
@@ -159,7 +162,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300008, guid: d0f0bb7b0aae47846a42f0be578f602f, type: 3}
+  m_Sprite: {fileID: -1378253409, guid: 58f650bf4076e1442bb940773fd0f669, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,18 +207,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009799123, y: 0.1405456}
+  m_Offset: {x: -0.017252862, y: -0.0010733008}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.5, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1.4, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.912596, y: 1.8749382}
+  m_Size: {x: 1.0628823, y: 1.1146685}
   m_EdgeRadius: 0
 --- !u!114 &3353124169809710287
 MonoBehaviour:
@@ -241,6 +244,7 @@ MonoBehaviour:
   randForce: 0
   randDirection: {x: 0, y: 0}
   rb: {fileID: 0}
+  anim: {fileID: 436291710927411729}
 --- !u!114 &8913411817708140686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +260,7 @@ MonoBehaviour:
   stateDetection: {fileID: 7591265199890155213}
   followTarget: {fileID: 0}
   speed: 3
+  anim: {fileID: 436291710927411729}
 --- !u!114 &7591265199890155213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +301,26 @@ MonoBehaviour:
   currentStamina: 0
   canDash: 1
   isPlayer: 0
+--- !u!95 &436291710927411729
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8122b2cbc76a814ba8e006da95d315c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2932844581705985581
 PrefabInstance:
   m_ObjectHideFlags: 0

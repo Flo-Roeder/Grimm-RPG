@@ -87,4 +87,9 @@ public class PlayerHealthController : MonoBehaviour
         }
     }
 
+    void SetStats()
+    {
+        armor=playerStats.armor;
+        
+    }
 }

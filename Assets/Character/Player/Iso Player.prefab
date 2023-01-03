@@ -977,8 +977,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251256007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.817, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 0, y: -1.6, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3414313707610315946}
@@ -1896,29 +1896,101 @@ MonoBehaviour:
     m_ActionId: 226d09d8-d72c-4104-95a8-7278946a59c0
     m_ActionName: Player/Dash[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 658516233}
+        m_TargetAssemblyTypeName: PlayerHealthController, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fa1b77e3-954d-4319-86eb-7b528793b42c
     m_ActionName: Player/Emergency Heal[/Keyboard/h]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bf6160c4-8b74-41f4-97d4-b1d77005c954
     m_ActionName: Player/Pause[/Keyboard/p]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: TimeChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 13da57b8-46bb-4b9c-bbb8-fb697d7524b9
     m_ActionName: Player/TimeChange[/Keyboard/t]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: ReloadRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 444c3de9-ab0a-42b2-9dba-cfd45d16755b
     m_ActionName: Player/ReloadRun[/Keyboard/r]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: QuitToDesktop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2dfbc35a-3c1c-410c-b1ae-0f6f535cee88
     m_ActionName: Player/Quit[/Keyboard/escape]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: Zoom
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d4c4b00f-1d0b-4075-abac-41bcf92532b4
-    m_ActionName: Player/Zoom[/Keyboard/numpadMinus,/Keyboard/numpadPlus]
+    m_ActionName: Player/Zoom[/Mouse/scroll/down,/Mouse/scroll/up]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1943,9 +2015,10 @@ MonoBehaviour:
   canDash: 1
   dashCooldown: 1.5
   dashStaminaCost: 20
-  healthController: {fileID: 0}
-  collectableInventory: {fileID: 0}
-  gearInventory: {fileID: 0}
+  healthController: {fileID: 658516233}
+  collectableInventory: {fileID: 11400000, guid: ae3b083c6aa3b1f44b2c896693d7d031, type: 2}
+  gearInventory: {fileID: 11400000, guid: c180691eaa08df346ba3b0499bb8dbc2, type: 2}
+  playerStats: {fileID: 11400000, guid: fb7f6208d45157e40b697437a4402aad, type: 2}
 --- !u!95 &3414313707610315948
 Animator:
   serializedVersion: 4
@@ -2087,7 +2160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2557107378495912356}
   - component: {fileID: 6191371044465573638}
-  - component: {fileID: 4843784016801264275}
+  - component: {fileID: 658516233}
   m_Layer: 6
   m_Name: HealthController
   m_TagString: Untagged
@@ -2128,7 +2201,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0053129196, y: 0.18201718}
   m_Size: {x: 0.48036575, y: 1.4347754}
   m_Direction: 0
---- !u!114 &4843784016801264275
+--- !u!114 &658516233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

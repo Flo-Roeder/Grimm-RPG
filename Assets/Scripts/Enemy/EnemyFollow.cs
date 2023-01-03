@@ -10,6 +10,7 @@ public class EnemyFollow : EnemyAttackBehave
 
     private Rigidbody2D rb;
 
+    [SerializeField] Animator anim;
     private void Awake()
     {
         followTarget = GameObject.FindGameObjectWithTag("Player").transform;
@@ -27,6 +28,10 @@ public class EnemyFollow : EnemyAttackBehave
         {
             Vector2 direction = (followTarget.position-transform.position).normalized;
             rb.velocity = direction*speed;
+            if (anim!=null)
+            {
+                anim.SetBool(AnimStrings.isMoving, true);
+            }
         }
     }
 }
