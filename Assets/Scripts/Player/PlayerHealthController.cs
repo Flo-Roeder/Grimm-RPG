@@ -53,7 +53,7 @@ public class PlayerHealthController : MonoBehaviour
     }
     public void Heal(int heal)
     {
-        if (playerStats.currentHealth < playerStats.maxHealth)
+        if (playerStats.currentHealth+heal < playerStats.maxHealth)
         {
             playerStats.currentHealth += heal;
         }

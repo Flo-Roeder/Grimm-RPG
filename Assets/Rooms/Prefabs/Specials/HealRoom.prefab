@@ -8129,12 +8129,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1090650023948415386, guid: c2b773d030e879846bcd9cab1f89553a, type: 3}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 6006749803881075621}
+    - target: {fileID: 1090650023948415386, guid: c2b773d030e879846bcd9cab1f89553a, type: 3}
+      propertyPath: healAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1852006760673730694, guid: c2b773d030e879846bcd9cab1f89553a, type: 3}
       propertyPath: m_Name
       value: Heal Fountain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b773d030e879846bcd9cab1f89553a, type: 3}
+--- !u!1 &6006749803881075621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 866048974389729615, guid: c2b773d030e879846bcd9cab1f89553a, type: 3}
+  m_PrefabInstance: {fileID: 6870401671104416490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6525337484195899218 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 420583219677916600, guid: c2b773d030e879846bcd9cab1f89553a, type: 3}

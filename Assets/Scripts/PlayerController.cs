@@ -45,8 +45,8 @@ public class PlayerController : MonoBehaviour
 
     public CollectableInventory collectableInventory;
     public GearInventory gearInventory;
+    public PlayerStats playerStats;
 
-    [SerializeField] PlayerStats playerStats;
     private void Awake()
     {
         rb= GetComponent<Rigidbody2D>();
