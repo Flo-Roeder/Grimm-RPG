@@ -29,12 +29,14 @@ public class PlayerHealthController : MonoBehaviour
     private void Start()
     {
         SetHealthUI();
+        SetStats();
     }
 
     private void Update()
     {
         playerStats.currentStamina = (playerStats.currentStamina < playerStats.maxStamina ? playerStats.currentStamina + Time.deltaTime * playerStats.regenStamina : playerStats.maxStamina);
         healthUI.SetStaminaUI(playerStats.maxStamina, playerStats.currentStamina, canDash);
+        
 
     }
 
@@ -47,6 +49,7 @@ public class PlayerHealthController : MonoBehaviour
         Death();
         healthUI.SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, isPlayer);
     }
+
     public void Heal(int heal)
     {
         if (playerStats.currentHealth+heal < playerStats.maxHealth)

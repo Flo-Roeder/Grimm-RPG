@@ -32,7 +32,6 @@ public class EnemyHealthController : MonoBehaviour
         {
             healthUI.SetHealthUI(maxHealth,currentHealth,isPlayer);
         }
-
     }
 
     private void Update()
@@ -52,9 +51,9 @@ public class EnemyHealthController : MonoBehaviour
         if (healthUI != null)
         {
             healthUI.SetHealthUI(maxHealth,currentHealth,isPlayer);
-
         }
     }
+
     public void Heal(int heal)
     {
         if (currentHealth < maxHealth)

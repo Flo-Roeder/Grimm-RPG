@@ -16,7 +16,7 @@ MonoBehaviour:
   currentHealth: 100
   armor: 2
   maxStamina: 150
-  currentStamina: 112.79583
+  currentStamina: 150
   regenStamina: 8
   moveSpeed: 10
   dashSpeed: 20

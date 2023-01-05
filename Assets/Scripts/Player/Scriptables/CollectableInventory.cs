@@ -10,6 +10,11 @@ public class CollectableInventory : ScriptableObject
     public int coins;
     public int bombs;
     public int keys;
+
+    public GameObject coinPrefab;
+    public GameObject bombPrefab;
+    public GameObject keyPrefab;
+
     // Start is called before the first frame update
     void Start()
     {

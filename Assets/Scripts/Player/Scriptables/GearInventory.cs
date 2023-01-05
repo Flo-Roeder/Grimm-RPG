@@ -7,7 +7,7 @@ public class GearInventory : ScriptableObject
 {
     //public Dictionary<string,int> inventoryList= new();
 
-    public GameObject hat, armot, shoes, weapon, jewelery;
+    public GameObject hat, armor, shoes, weapon, jewelery;
     
     // Start is called before the first frame update
     void Start()
