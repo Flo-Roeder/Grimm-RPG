@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd763e638578fc459cebbdb95d089c5, type: 3}
+  m_Name: RoomRewards
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 7705844267482410575, guid: db34785aa2cb5a44ebe9baab6af70543, type: 3}
+  - {fileID: 5431926781711433401, guid: d62fec7a98a38c240830fae5b965604b, type: 3}
+  - {fileID: 5431926781711433401, guid: d62fec7a98a38c240830fae5b965604b, type: 3}
+  - {fileID: 5431926781711433401, guid: d62fec7a98a38c240830fae5b965604b, type: 3}
+  - {fileID: 5431926781711433401, guid: d62fec7a98a38c240830fae5b965604b, type: 3}
+  - {fileID: 5431926781711433401, guid: d62fec7a98a38c240830fae5b965604b, type: 3}
+  - {fileID: 4272475398113399244, guid: af531beb7983e2d41907dd401454feed, type: 3}
+  - {fileID: 4272475398113399244, guid: af531beb7983e2d41907dd401454feed, type: 3}
