@@ -41,33 +41,40 @@ public class Chest : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("PlayerHit") 
-            && !isOpen)
+        if (!isOpen)
         {
-            switch (chesttype)
+            if (collision.CompareTag("PlayerHit"))
             {
-                case Chesttype.normal:
-                    OpenChest();
-                    break;
-                case Chesttype.keychest:
-                    if (collectableInventory.keys>=value)
-                    {
+                switch (chesttype)
+                {
+                    case Chesttype.normal:
                         OpenChest();
-                        collectableInventory.keys-=value;
-                        GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
+                        break;
+                    case Chesttype.keychest:
+                        if (collectableInventory.keys >= value)
+                        {
+                            OpenChest();
+                            collectableInventory.keys -= value;
+                            GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
 
-                    }
-                    break;
-                case Chesttype.damagechest:
-                    if (playerStats.currentHealth>value)
-                    {
-                        OpenChest();
-                        playerStats.currentHealth -= value;
-                        GameObject.FindGameObjectWithTag("HealthUI").GetComponent<HealthUI>().SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, true);
-                    }
-                    break;
-                default:
-                    break;
+                        }
+                        break;
+                    case Chesttype.damagechest:
+                        if (playerStats.currentHealth > value)
+                        {
+                            OpenChest();
+                            playerStats.currentHealth -= value;
+                            GameObject.FindGameObjectWithTag("HealthUI").GetComponent<HealthUI>().SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, true);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (collision.CompareTag("PlayerBomb")
+                && chesttype==Chesttype.bombchest)
+            {
+                OpenChest();
             }
         }
     }

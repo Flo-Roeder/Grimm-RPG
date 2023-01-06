@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfeb97d8c74271343917d0fb1c286c60, type: 3}
   m_Name: Player Collectable Inventory
   m_EditorClassIdentifier: 
-  coins: 116
-  bombs: 11
-  keys: 3
+  coins: 346
+  bombs: 2
+  keys: 14
   coinPrefab: {fileID: 5592192802146461071, guid: c638e611a620a284bb5b43fffa3c74e0, type: 3}
   bombPrefab: {fileID: 260899339402397549, guid: 36aae70978a2cd34b9e70cd19ae4e6e9, type: 3}
   keyPrefab: {fileID: 1648821548678220176, guid: 919612ea9340c33419cfb940dbfda097, type: 3}
