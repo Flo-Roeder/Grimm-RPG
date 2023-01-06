@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthUp : MonoBehaviour
+public class BombShop : MonoBehaviour
 {
-    [SerializeField] int value;
+    [SerializeField] int bombValue;
     [SerializeField] int cost;
     [SerializeField] TextMeshProUGUI textMesh;
 
@@ -21,14 +20,12 @@ public class HealthUp : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             CollectableInventory collectableInventory = collision.gameObject.GetComponent<PlayerController>().collectableInventory;
-            PlayerHealthController playerHealthController = collision.gameObject.GetComponentInChildren<PlayerHealthController>();
-            if (collectableInventory.coins >= cost)
+            if (collectableInventory.coins>=cost)
             {
-                playerHealthController.playerStats.maxHealth+=value;
-                playerHealthController.SetHealthUI();
+            collectableInventory.bombs += bombValue;
                 collectableInventory.coins -= cost;
-                Destroy(this.gameObject);
-                GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
+            Destroy(this.gameObject);
+            GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
             }
         }
     }

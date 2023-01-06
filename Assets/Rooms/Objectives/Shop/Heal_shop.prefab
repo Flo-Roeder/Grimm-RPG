@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7193484632307205294}
   - component: {fileID: 5216821494072802598}
   m_Layer: 12
-  m_Name: Heal
+  m_Name: Heal_shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,11 +112,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7193484632307205288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d33672b88d3c9e047ae4e1e0b087de59, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fcab7c26ff76f14290949ecaa4c7daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healValue: 100
-  cost: 10
+  healValue: 50
+  cost: 15
   textMesh: {fileID: 7193484633537878731}
 --- !u!1 &7193484633212731331
 GameObject:

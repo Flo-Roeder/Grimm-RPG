@@ -5,9 +5,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class StaminaUp : MonoBehaviour
+public class HealShop : MonoBehaviour
 {
-    [SerializeField] int value;
+    [SerializeField] int healValue;
     [SerializeField] int cost;
     [SerializeField] TextMeshProUGUI textMesh;
 
@@ -21,11 +21,9 @@ public class StaminaUp : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             CollectableInventory collectableInventory = collision.gameObject.GetComponent<PlayerController>().collectableInventory;
-            PlayerHealthController playerHealthController = collision.gameObject.GetComponentInChildren<PlayerHealthController>();
             if (collectableInventory.coins >= cost)
             {
-                playerHealthController.playerStats.maxStamina += value;
-                playerHealthController.SetHealthUI();
+                collision.gameObject.GetComponentInChildren<PlayerHealthController>().Heal(healValue);
                 collectableInventory.coins -= cost;
                 Destroy(this.gameObject);
                 GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();

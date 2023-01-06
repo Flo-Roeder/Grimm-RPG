@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd763e638578fc459cebbdb95d089c5, type: 3}
+  m_Name: BasicEnemyLoot
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 7555307147656996963, guid: 0fce4d336db58ca429b5bb5e9ba7a926, type: 3}
+  - {fileID: 5193060376167512362, guid: 4acb040fe933a6b4fa1ceb769346b423, type: 3}
+  - {fileID: 6868512908961612753, guid: d688edde3f321514ab3f359fa9974e97, type: 3}
+  - {fileID: 6868512908961612753, guid: d8134ad50d45ec9458314a3276d99a35, type: 3}
+  - {fileID: 6868512908961612753, guid: d8134ad50d45ec9458314a3276d99a35, type: 3}
+  - {fileID: 6868512908961612753, guid: d8134ad50d45ec9458314a3276d99a35, type: 3}
+  - {fileID: 6868512908961612753, guid: d8134ad50d45ec9458314a3276d99a35, type: 3}
+  - {fileID: 6868512908961612753, guid: d8134ad50d45ec9458314a3276d99a35, type: 3}
+  - {fileID: 6868512908961612753, guid: d8134ad50d45ec9458314a3276d99a35, type: 3}
+  - {fileID: 6868512908961612753, guid: d8134ad50d45ec9458314a3276d99a35, type: 3}

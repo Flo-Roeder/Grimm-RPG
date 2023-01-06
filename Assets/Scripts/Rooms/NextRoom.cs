@@ -37,6 +37,6 @@ public class NextRoom : MonoBehaviour
         randomroomTemplate.SpawnObject(_tempParent.transform);
         player.GetComponent<Animator>().SetBool(AnimStrings.canMove, true);
         GameObject.FindGameObjectWithTag("LevelUI").GetComponentInChildren<LevelUI>().NextRoomUpdateLevelUI();
-        Destroy(transform.parent.gameObject);
+            Destroy(GetComponentInParent<RoomHandler>().transform.parent.gameObject);
     }
 }

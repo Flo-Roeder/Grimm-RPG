@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: bcd67596fdbaea143a16960adb6e7f30, type: 2}
+  lootAmount: 3
 --- !u!1 &4618488387566227050
 GameObject:
   m_ObjectHideFlags: 0

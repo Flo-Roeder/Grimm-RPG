@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Chest : MonoBehaviour
@@ -22,9 +23,12 @@ public class Chest : MonoBehaviour
     [SerializeField] PlayerStats playerStats;
     [SerializeField] CollectableInventory collectableInventory;
 
+    private SpawnLoot spawnLoot;
+
     // Start is called before the first frame update
     void Start()
     {
+        spawnLoot= GetComponent<SpawnLoot>();
         spriteRenderer= GetComponent<SpriteRenderer>();
     }
 
@@ -43,14 +47,12 @@ public class Chest : MonoBehaviour
             switch (chesttype)
             {
                 case Chesttype.normal:
-                    spriteRenderer.sprite=openSprite;
-                    isOpen=true;
+                    OpenChest();
                     break;
                 case Chesttype.keychest:
                     if (collectableInventory.keys>=value)
                     {
-                        spriteRenderer.sprite=openSprite;
-                        isOpen=true;
+                        OpenChest();
                         collectableInventory.keys-=value;
                         GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
 
@@ -59,8 +61,7 @@ public class Chest : MonoBehaviour
                 case Chesttype.damagechest:
                     if (playerStats.currentHealth>value)
                     {
-                        spriteRenderer.sprite=openSprite;
-                        isOpen=true;
+                        OpenChest();
                         playerStats.currentHealth -= value;
                         GameObject.FindGameObjectWithTag("HealthUI").GetComponent<HealthUI>().SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, true);
                     }
@@ -68,6 +69,16 @@ public class Chest : MonoBehaviour
                 default:
                     break;
             }
+        }
+    }
+
+    private void OpenChest()
+    {
+        spriteRenderer.sprite = openSprite;
+        isOpen = true;
+        if (spawnLoot)
+        {
+            spawnLoot.DropLoot();
         }
     }
 }

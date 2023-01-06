@@ -19,6 +19,7 @@ public class ScriptableRandomSpawn : ScriptableObject
 
     public void SpawnObject(Transform transform)
     {
+
         int rand = Random.Range(0, objects.Length);
         Instantiate(objects[rand],transform);
 
