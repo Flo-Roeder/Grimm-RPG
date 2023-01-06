@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class NextRoom : MonoBehaviour
 {
-    [SerializeField] ScriptableRoom randomroomTemplate;
-    [SerializeField] Transform roomSpawnPoint;
+    [SerializeField] ScriptableRandomSpawn randomroomTemplate;
     Animator fadeCanvasAnimator;
 
     private GameObject player;
@@ -22,9 +21,8 @@ public class NextRoom : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             player = collision.gameObject;
-            StartCoroutine(NextRoomCo());
-            randomroomTemplate.GenerateRoom(roomSpawnPoint);
             fadeCanvasAnimator.SetTrigger(AnimStrings.fadeOut);
+            StartCoroutine(NextRoomCo());
         }
     }
 
@@ -32,9 +30,13 @@ public class NextRoom : MonoBehaviour
     {
         player.GetComponent<Animator>().SetBool(AnimStrings.canMove, false);
         yield return new WaitForSeconds(.5f);
-        Transform playTrans = player.GetComponent<Transform>();
-        playTrans.position = roomSpawnPoint.position;
+            Transform _playerTrans = player.GetComponent<Transform>();
+        _playerTrans.position = Vector3.zero;
+            GameObject _tempParent = new ("RoomSpawn");
+        _tempParent.transform.position = Vector3.zero;
+        randomroomTemplate.SpawnObject(_tempParent.transform);
         player.GetComponent<Animator>().SetBool(AnimStrings.canMove, true);
         GameObject.FindGameObjectWithTag("LevelUI").GetComponentInChildren<LevelUI>().NextRoomUpdateLevelUI();
+        Destroy(transform.parent.gameObject);
     }
 }

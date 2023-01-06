@@ -13,7 +13,7 @@ public class CoinCollectable : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerController>().collectableInventory.coins += value;
-            Destroy(this.gameObject);
+            Destroy(transform.parent.gameObject);
             GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
         }
     }

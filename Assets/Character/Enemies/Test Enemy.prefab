@@ -78,6 +78,8 @@ MonoBehaviour:
   knockbackTime: 0.15
   knockbackTimer: 0
   staminaCost: 0
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &8913411817708140788
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +97,7 @@ GameObject:
   - component: {fileID: 323702449}
   - component: {fileID: 6208948189568524704}
   - component: {fileID: 1034252547}
+  - component: {fileID: 5171349268511032415}
   m_Layer: 7
   m_Name: Test Enemy
   m_TagString: Enemy
@@ -242,6 +245,7 @@ MonoBehaviour:
   randForce: 0
   randDirection: {x: 0, y: 0}
   rb: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &8913411817708140686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +261,7 @@ MonoBehaviour:
   stateDetection: {fileID: 6208948189568524704}
   followTarget: {fileID: 0}
   speed: 3
+  anim: {fileID: 0}
 --- !u!114 &323702449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +322,19 @@ MonoBehaviour:
   attackDownScaling: 0
   maxWaves: 0
   waveCounter: 0
+--- !u!114 &5171349268511032415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913411817708140788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f688af15ae0468047adf94303ee84d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: {fileID: 11400000, guid: bcd67596fdbaea143a16960adb6e7f30, type: 2}
 --- !u!1001 &2932844581705985581
 PrefabInstance:
   m_ObjectHideFlags: 0

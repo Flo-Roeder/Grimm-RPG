@@ -73,5 +73,9 @@ public class RoomHandler : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        Destroy(gameObject);
+    }
 
 }

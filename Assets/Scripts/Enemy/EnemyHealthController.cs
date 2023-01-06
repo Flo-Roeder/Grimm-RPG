@@ -20,10 +20,14 @@ public class EnemyHealthController : MonoBehaviour
     public delegate void DeathEvent();
     public static event DeathEvent DeathEventTrigger;
 
+    SpawnLoot spawnLoot;
+
     private void Awake()
     {
+        spawnLoot = GetComponent<SpawnLoot>();
         currentHealth = maxHealth;
         currentStamina= maxStamina;
+        DeathEventTrigger = null;
     }
 
     private void Start()
@@ -83,6 +87,10 @@ public class EnemyHealthController : MonoBehaviour
         if (currentHealth <= 0)
         {
             //TODO death animation
+            if (spawnLoot)
+            {
+                spawnLoot.DropLoot();
+            }
             DeathEventTrigger?.Invoke();
             this.gameObject.SetActive(false);
         }
