@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private float dashTimer;
     [SerializeField]int dashStaminaCost;
 
+    [SerializeField] GameObject playerBomb;
 
     [SerializeField] PlayerHealthController healthController;
 
@@ -142,5 +144,16 @@ public class PlayerController : MonoBehaviour
         dashTime = playerStats.dashTime;
         dashCooldown = playerStats.dashCooldown;
         dashStaminaCost = (int)playerStats.dashStaminaCost;
+    }
+
+    public void PlaceBomb(InputAction.CallbackContext context)
+    {
+        if (context.started
+            && collectableInventory.bombs>0)
+        {
+            collectableInventory.bombs--;
+            GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
+            Instantiate(playerBomb,transform.position, Quaternion.identity);
+        }
     }
 }

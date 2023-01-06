@@ -11,6 +11,7 @@ TagManager:
   - HealthUI
   - LevelUI
   - CollectableUI
+  - PlayerBomb
   layers:
   - Default
   - TransparentFX
