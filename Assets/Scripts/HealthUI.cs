@@ -40,11 +40,11 @@ public class HealthUI : MonoBehaviour
         staminaSlider.value= currentStamina/ maxStamina;
         if (canDash)
         {
-            dashCooldownImage.SetActive(false);
+            dashCooldownImage.SetActive(true);
         }
         else
         {
-            dashCooldownImage.SetActive(true);
+            dashCooldownImage.SetActive(false);
         }
     }
 
