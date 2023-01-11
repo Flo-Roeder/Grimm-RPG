@@ -3,24 +3,30 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Chest : MonoBehaviour
+public class ActivatableObject : MonoBehaviour
 {
 
-    [SerializeField] enum Chesttype
+    [SerializeField] enum Opentype
     {
         normal,
-        bombchest,
-        keychest,
-        damagechest
+        bomb,
+        key,
+        damage
     }
-    [SerializeField] Chesttype chesttype;
-    [SerializeField] int value;
+    [SerializeField] Opentype opentype;
 
     [SerializeField] bool isOpen;
     [SerializeField] Sprite openSprite;
     SpriteRenderer spriteRenderer;
 
+
+    [Header("Optional for beneath")]
+    [SerializeField] int value;
+
+    [Header("Optional for Damage Object")]
     [SerializeField] PlayerStats playerStats;
+
+    [Header("Optional for Key Object")]
     [SerializeField] CollectableInventory collectableInventory;
 
     private SpawnLoot spawnLoot;
@@ -45,12 +51,12 @@ public class Chest : MonoBehaviour
         {
             if (collision.CompareTag("PlayerHit"))
             {
-                switch (chesttype)
+                switch (opentype)
                 {
-                    case Chesttype.normal:
+                    case Opentype.normal:
                         OpenChest();
                         break;
-                    case Chesttype.keychest:
+                    case Opentype.key:
                         if (collectableInventory.keys >= value)
                         {
                             OpenChest();
@@ -59,7 +65,7 @@ public class Chest : MonoBehaviour
 
                         }
                         break;
-                    case Chesttype.damagechest:
+                    case Opentype.damage:
                         if (playerStats.currentHealth > value)
                         {
                             OpenChest();
@@ -72,7 +78,7 @@ public class Chest : MonoBehaviour
                 }
             }
             else if (collision.CompareTag("PlayerBomb")
-                && chesttype==Chesttype.bombchest)
+                && opentype ==Opentype.bomb)
             {
                 OpenChest();
             }
