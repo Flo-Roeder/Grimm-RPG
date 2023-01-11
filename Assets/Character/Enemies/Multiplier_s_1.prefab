@@ -18,9 +18,8 @@ GameObject:
   - component: {fileID: 4299502117720022599}
   - component: {fileID: 7890441915982672214}
   - component: {fileID: 4299502117276869109}
-  - component: {fileID: 7603828736624511435}
   m_Layer: 7
-  m_Name: Multiplier
+  m_Name: Multiplier_s_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 4618488386787059714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4618488387566227051}
@@ -84,8 +83,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9181ed72af0f6cf4f849cc33b92d0924, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78039217}
+  m_Sprite: {fileID: 1314935561, guid: c84d0bc33b0f9af4092342a3c0809325, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129,18 +128,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.057705656, y: -0.2286582}
+  m_Offset: {x: 0.0053555965, y: 0.005569309}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.53125, y: 0.40625}
     newSize: {x: 1.4, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8123822, y: 0.60874903}
+  m_Size: {x: 0.48806715, y: 0.5246673}
   m_EdgeRadius: 0
 --- !u!114 &4618488386787059833
 MonoBehaviour:
@@ -255,28 +254,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthController: {fileID: 4618488386787059833}
   spawnOnDeath:
-  - {fileID: 4618488386787059714, guid: 894114de0db185f4380fa19bca2775ba, type: 3}
-  - {fileID: 4618488386787059714, guid: 34ee640f24a8b36468999483bb3bc945, type: 3}
-  - {fileID: 4618488386787059714, guid: 06381868f32e4d741a6902853f404ab7, type: 3}
+  - {fileID: 4618488386787059714}
+  - {fileID: 4618488386787059714}
+  - {fileID: 4618488386787059714}
   sizeDownSclaing: 2
   healthDownScaling: 3
   attackDownScaling: 2
   maxWaves: 2
   waveCounter: 0
---- !u!114 &7603828736624511435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4618488386787059714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f688af15ae0468047adf94303ee84d07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: bcd67596fdbaea143a16960adb6e7f30, type: 2}
-  lootAmount: 3
 --- !u!1 &4618488387566227050
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +308,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.039539024, y: -0.3114615}
+  m_Offset: {x: 0.0055047274, y: -0.008166969}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -334,7 +319,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6417451, y: 0.35379434}
+  m_Size: {x: 0.41352344, y: 0.38982928}
   m_EdgeRadius: 0
 --- !u!114 &4618488387566227044
 MonoBehaviour:
