@@ -50,6 +50,18 @@ public class PlayerHealthController : MonoBehaviour
         healthUI.SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, isPlayer);
     }
 
+    public void Hit(int _damage,int _piercedamage)
+    {
+        _damage = _damage - armor > 0 ? _damage - armor : 0;
+        int hitDamage = _damage + _piercedamage;
+        playerStats.currentHealth -= _piercedamage;
+        anim.SetTrigger(AnimStrings.isHit);
+        Death();
+        healthUI.SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, isPlayer);
+
+    }
+
+
     public void Heal(int heal)
     {
         if (playerStats.currentHealth+heal < playerStats.maxHealth)
