@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     public GearInventory gearInventory;
     public PlayerStats playerStats;
 
+
     private void Awake()
     {
         rb= GetComponent<Rigidbody2D>();
