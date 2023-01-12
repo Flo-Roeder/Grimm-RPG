@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
 
-    private Vector2 moveInput;
+    [SerializeField]private Vector2 moveInput;
 
     private bool _isMoving;
     public bool IsMoving {
@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
         moveInput.Normalize();
+        moveInput.y *= 0.5f; //isometric factor
         IsMoving = moveInput != Vector2.zero;
     }
 
