@@ -11,6 +11,8 @@ public class FireTrap : MonoBehaviour
     [SerializeField] float timeDelay;
     [SerializeField] float ticTime;
     private float ticTimer;
+    [SerializeField] float attackTime;
+    private float attackTimer;
 
     Animator anim;
 
@@ -20,6 +22,7 @@ public class FireTrap : MonoBehaviour
         anim= GetComponent<Animator>();
         restTimer = restTime;
         ticTimer = ticTime;
+        attackTimer= attackTime;
     }
 
     // Update is called once per frame
@@ -65,14 +68,20 @@ public class FireTrap : MonoBehaviour
 
     private void PlayAnimation()
     {
-        if (restTimer<=0)
+        if (restTimer>0)
         {
-            restTimer = restTime;
-            anim.SetTrigger(AnimStrings.isAttacking);
+            restTimer-=Time.deltaTime;
+        }
+        else if(attackTimer>0)
+        {
+            attackTimer-=Time.deltaTime;
+            anim.SetBool(AnimStrings.isAttacking, true);
         }
         else
         {
-            restTimer-=Time.deltaTime;
+            anim.SetBool(AnimStrings.isAttacking, false);
+            restTimer = restTime;
+            attackTimer = attackTime;
         }
     }
 }

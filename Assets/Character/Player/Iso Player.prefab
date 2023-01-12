@@ -136,6 +136,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &540845463
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +274,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &645914156
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +412,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &933270819
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +550,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &1003832184
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +688,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &1140983315
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +826,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &1225972608
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +964,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &1251256007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1296,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &893112639724986741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1434,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &933144270553863403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1572,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &2778944166214122842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,6 +2011,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d4c4b00f-1d0b-4075-abac-41bcf92532b4
     m_ActionName: Player/Zoom[/Mouse/scroll/down,/Mouse/scroll/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b8578f94-14be-41c0-87e4-a7d3bbdab0af
+    m_ActionName: Player/Bomb[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2008,6 +2032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fd177a3607cc840a5f75cacd096668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveInput: {x: 0, y: 0}
   _canMove: 1
   moveSpeed: 10
   dashSpeed: 20
@@ -2015,6 +2040,7 @@ MonoBehaviour:
   canDash: 1
   dashCooldown: 1.5
   dashStaminaCost: 20
+  playerBomb: {fileID: 0}
   healthController: {fileID: 658516233}
   collectableInventory: {fileID: 11400000, guid: ae3b083c6aa3b1f44b2c896693d7d031, type: 2}
   gearInventory: {fileID: 11400000, guid: c180691eaa08df346ba3b0499bb8dbc2, type: 2}
@@ -2198,8 +2224,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0053129196, y: 0.18201718}
-  m_Size: {x: 0.48036575, y: 1.4347754}
+  m_Offset: {x: 0.0053129196, y: -0.29518765}
+  m_Size: {x: 0.48036575, y: 0.48036575}
   m_Direction: 0
 --- !u!114 &658516233
 MonoBehaviour:
@@ -2354,6 +2380,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &5776988394111466449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,6 +2518,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6077429690637579572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,6 +2656,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6123914473287421223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,6 +2794,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6191371043503540277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,6 +2932,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6191371043743559600
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,6 +3113,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6191371043852114989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,6 +3251,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6191371044061051685
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,6 +3389,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6191371044452667694
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,6 +3527,8 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6191371044727550580
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,6 +3665,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6191371044804469383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3800,6 +3846,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6191371044852788956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3936,6 +3984,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &6723041694011203203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4072,6 +4122,8 @@ MonoBehaviour:
   knockbackTime: 0.2
   knockbackTimer: 0
   staminaCost: 5
+  isPlayer: 0
+  playerStats: {fileID: 0}
 --- !u!1 &8211404159630323804
 GameObject:
   m_ObjectHideFlags: 0
@@ -4208,3 +4260,5 @@ MonoBehaviour:
   knockbackTime: 0.3
   knockbackTimer: 0
   staminaCost: 8
+  isPlayer: 0
+  playerStats: {fileID: 0}

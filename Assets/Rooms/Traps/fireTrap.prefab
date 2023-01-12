@@ -151,5 +151,6 @@ MonoBehaviour:
   ongoingDamage: 1
   initialDamage: 10
   restTime: 2
-  timeDelay: 0
+  timeDelay: 1
   ticTime: 0.5
+  attackTime: 0
