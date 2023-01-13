@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class KeyCollectable : MonoBehaviour
+public class KeyCollectable : Collectable
 {
-    [SerializeField] int value;
 
 
     private void OnTriggerEnter2D(Collider2D collision)

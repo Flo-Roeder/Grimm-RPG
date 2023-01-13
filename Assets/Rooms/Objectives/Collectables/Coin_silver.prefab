@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 5
+  delayTime: 1
+  trigger: {fileID: 6868512908961612754}
 --- !u!50 &1245455127881674430
 Rigidbody2D:
   serializedVersion: 4

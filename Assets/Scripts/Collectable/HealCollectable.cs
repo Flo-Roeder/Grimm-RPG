@@ -5,20 +5,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealOnCollision : MonoBehaviour
+public class HealCollectable : Collectable
 {
-    [SerializeField] int healValue;
-
-    private void Start()
-    {
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             CollectableInventory collectableInventory = collision.gameObject.GetComponent<PlayerController>().collectableInventory;
-            collision.gameObject.GetComponentInChildren<PlayerHealthController>().Heal(healValue);
+            collision.gameObject.GetComponentInChildren<PlayerHealthController>().Heal(value);
             Destroy(this.gameObject);
             GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
         }

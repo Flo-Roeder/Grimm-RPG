@@ -38,50 +38,61 @@ public class ActivatableObject : MonoBehaviour
         spriteRenderer= GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
 
         if (!isOpen)
         {
-            if (collision.CompareTag("PlayerHit"))
+            if (collision.CompareTag("Player"))
             {
-                switch (opentype)
+                PlayerInteract playerInteract = collision.GetComponent<PlayerInteract>();
+                playerInteract.CanInteract(true);
+                if (playerInteract.isInteracting)
                 {
-                    case Opentype.normal:
-                        OpenChest();
-                        break;
-                    case Opentype.key:
-                        if (collectableInventory.keys >= value)
-                        {
+                        switch (opentype)
+                    {
+                        case Opentype.normal:
                             OpenChest();
-                            collectableInventory.keys -= value;
-                            GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
+                            break;
+                        case Opentype.key:
+                            if (collectableInventory.keys >= value)
+                            {
+                                OpenChest();
+                                collectableInventory.keys -= value;
+                                GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
 
-                        }
-                        break;
-                    case Opentype.damage:
-                        if (playerStats.currentHealth > value)
-                        {
-                            OpenChest();
-                            playerStats.currentHealth -= value;
-                            GameObject.FindGameObjectWithTag("HealthUI").GetComponent<HealthUI>().SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, true);
-                        }
-                        break;
-                    default:
-                        break;
+                            }
+                            break;
+                        case Opentype.damage:
+                            if (playerStats.currentHealth > value)
+                            {
+                                OpenChest();
+                                playerStats.currentHealth -= value;
+                                GameObject.FindGameObjectWithTag("HealthUI").GetComponent<HealthUI>().SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, true);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    playerInteract.isInteracting= false;
                 }
+
             }
             else if (collision.CompareTag("PlayerBomb")
                 && opentype ==Opentype.bomb)
             {
                 OpenChest();
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            PlayerInteract playerInteract = collision.GetComponent<PlayerInteract>();
+            playerInteract.CanInteract(false);
         }
     }
 

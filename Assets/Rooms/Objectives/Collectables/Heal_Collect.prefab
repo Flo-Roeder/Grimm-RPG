@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7193484632307205295}
   - component: {fileID: 7193484632307205294}
   - component: {fileID: 2878812360287059295}
+  - component: {fileID: 556015117202226408}
   m_Layer: 12
   m_Name: Heal_Collect
   m_TagString: Untagged
@@ -114,4 +115,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b29fc4c267d90640b482f56cafdd875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healValue: 5
+  value: 10
+  delayTime: 1
+  trigger: {fileID: 7193484632307205294}
+--- !u!58 &556015117202226408
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7193484632307205288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.015012066, y: -0.13510868}
+  serializedVersion: 2
+  m_Radius: 0.13971038
