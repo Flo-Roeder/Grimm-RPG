@@ -44,7 +44,8 @@ public class ActivatableObject : MonoBehaviour
 
         if (!isOpen)
         {
-            if (collision.CompareTag("Player"))
+            if (collision.CompareTag("Player")
+                && opentype!=Opentype.bomb)
             {
                 PlayerInteract playerInteract = collision.GetComponent<PlayerInteract>();
                 playerInteract.CanInteract(true);

@@ -130,10 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07cb1aa7f08dd4d4193c2d8fe44cd0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chesttype: 1
-  value: 1
+  opentype: 1
   isOpen: 0
   openSprite: {fileID: 21300000, guid: 314ea89c75e94ce4da9683465e0baa67, type: 3}
+  value: 1
   playerStats: {fileID: 11400000, guid: fb7f6208d45157e40b697437a4402aad, type: 2}
   collectableInventory: {fileID: 11400000, guid: ae3b083c6aa3b1f44b2c896693d7d031, type: 2}
 --- !u!60 &4272475398113399245

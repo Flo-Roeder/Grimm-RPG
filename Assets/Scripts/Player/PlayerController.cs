@@ -157,7 +157,10 @@ public class PlayerController : MonoBehaviour
         {
             collectableInventory.bombs--;
             GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
-            Instantiate(playerBomb,transform.position, Quaternion.identity);
+            Vector3 _bombPosition = new Vector3(anim.GetFloat(AnimStrings.xVelocity), anim.GetFloat(AnimStrings.yVelocity)*2,0)*3
+                                                + new Vector3 (transform.position.x, transform.position.y-1,transform.position.z);
+
+            Instantiate(playerBomb,_bombPosition, Quaternion.identity);
         }
     }
 }
