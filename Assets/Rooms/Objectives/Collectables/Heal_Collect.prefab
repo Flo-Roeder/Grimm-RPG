@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
-  delayTime: 1
+  delayTime: 0.1
   trigger: {fileID: 7193484632307205294}
 --- !u!58 &556015117202226408
 CircleCollider2D:

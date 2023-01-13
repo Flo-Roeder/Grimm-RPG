@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
-  delayTime: 1
+  delayTime: 0.1
   trigger: {fileID: 7555307147656996965}
 --- !u!50 &2081825871592216746
 Rigidbody2D:
