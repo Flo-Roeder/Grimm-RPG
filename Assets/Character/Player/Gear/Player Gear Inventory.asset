@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a411e0e168554843adee41568f9a614, type: 3}
   m_Name: Player Gear Inventory
   m_EditorClassIdentifier: 
-  helmet: {fileID: 0}
-  armor: {fileID: 0}
+  helmet: {fileID: 6473659140185030521, guid: 59ca42af8a54ebd47944043839ae5bc5, type: 3}
+  armor: {fileID: 6473659140185030521, guid: 59ca42af8a54ebd47944043839ae5bc5, type: 3}
   shoes: {fileID: 6473659140185030521, guid: 59ca42af8a54ebd47944043839ae5bc5, type: 3}
-  weapon: {fileID: 0}
+  weapon: {fileID: 6473659140185030521, guid: 59ca42af8a54ebd47944043839ae5bc5, type: 3}
   jewelery: {fileID: 6473659140185030521, guid: 59ca42af8a54ebd47944043839ae5bc5, type: 3}
   playerStats: {fileID: 11400000, guid: fb7f6208d45157e40b697437a4402aad, type: 2}
-  defaultWeapon: {fileID: 6473659140185030521, guid: 59ca42af8a54ebd47944043839ae5bc5, type: 3}
+  defaultGear: {fileID: 6473659140185030521, guid: 59ca42af8a54ebd47944043839ae5bc5, type: 3}

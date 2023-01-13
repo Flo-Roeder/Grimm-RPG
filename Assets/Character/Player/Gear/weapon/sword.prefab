@@ -106,10 +106,10 @@ MonoBehaviour:
   dashSpeed: 0
   dashStamina: 0
   attackDamage: 5
-  critChance: 0
-  critMulti: 0
+  critChance: 5
   attackStamina: 0
   knockbackAmount: 0
+  critMulti: 1.5
   preFab: {fileID: 6263787568452840955}
   collider: {fileID: 6263787568452840954}
   pickUpDelay: 3

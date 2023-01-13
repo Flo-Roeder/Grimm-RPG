@@ -20,7 +20,8 @@ public class GearPickUp : MonoBehaviour
 {
 
     public int maxHealth, armor, maxStamina, staminaReg, moveSpeed, dashSpeed,
-                dashStamina, attackDamage, critChance, critMulti, attackStamina, knockbackAmount;
+                dashStamina, attackDamage, critChance, attackStamina, knockbackAmount;
+    public float critMulti;
     [SerializeField] GameObject preFab;
     [SerializeField] new Collider2D collider;
     [SerializeField]float pickUpDelay;
@@ -46,18 +47,14 @@ public class GearPickUp : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.CompareTag("Player"))
         {
-            GearInventory gearInventory = collision.GetComponent<PlayerController>().gearInventory;
+            PlayerController playerController = collision.GetComponent<PlayerController>();
+            GearInventory gearInventory = playerController.gearInventory;
 
             switch(gearType)
             {
@@ -79,7 +76,7 @@ public class GearPickUp : MonoBehaviour
                 default:
                     break;
             }
-
+            playerController.SetStats();
             GameObject.FindGameObjectWithTag("GearUI").GetComponent<GearUI>().UpdateUIImages(preFab);
             //Destroy(this.gameObject);
             this.gameObject.SetActive(false);

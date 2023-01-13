@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -31,7 +32,8 @@ public class PlayerController : MonoBehaviour
         set { _canMove = anim.GetBool(AnimStrings.canMove); }
     }
 
-    public float moveSpeed;
+    public float moveSpeed ;
+
     public float dashSpeed;
 
     Vector2 appliedDashForce;
@@ -139,7 +141,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void SetStats()
+    public void SetStats()
     {
         moveSpeed = playerStats.moveSpeed;
         dashSpeed = playerStats.dashSpeed;

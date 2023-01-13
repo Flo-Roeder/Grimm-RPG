@@ -11,7 +11,7 @@ public class GearInventory : ScriptableObject
 
     public GameObject helmet, armor, shoes, weapon, jewelery;
     public PlayerStats playerStats;
-    [SerializeField] GameObject defaultWeapon;
+    [SerializeField] GameObject defaultGear;
 
 
 
@@ -21,7 +21,14 @@ public class GearInventory : ScriptableObject
         //weapon = defaultWeapon;
     }
 
-
+    public void ResetGear()
+    {
+        helmet = defaultGear;
+        armor=defaultGear;
+        shoes=defaultGear;
+        weapon=defaultGear;
+        jewelery=defaultGear;
+    }
 
     public void PicUpNewWeapon(GameObject _newGear)
     {
@@ -80,7 +87,7 @@ public class GearInventory : ScriptableObject
 
 
     private void AddPlayerStats(int maxHealth, int armor, int maxStamina, int staminaReg, int moveSpeed,
-                                int dashSpeed, int dashStamina, int attackDamage, int critChance, int critMulti,
+                                int dashSpeed, int dashStamina, int attackDamage, int critChance, float critMulti,
                                 int attackStamina, int knockbackAmount)
     {
         playerStats.MaxHealthChange(maxHealth);

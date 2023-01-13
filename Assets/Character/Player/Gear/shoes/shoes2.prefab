@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6263787568452840957}
   - component: {fileID: 6263787568452840954}
   m_Layer: 0
-  m_Name: armor2
+  m_Name: shoes2
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2ac49faea44c88e4b9bf97422ec3f9d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c60a2abc5cf909347b19a0372b8af8f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,9 +101,9 @@ MonoBehaviour:
   maxHealth: 0
   armor: 0
   maxStamina: 20
-  staminaReg: 2
-  moveSpeed: 2
-  dashSpeed: 0
+  staminaReg: 5
+  moveSpeed: 5
+  dashSpeed: 5
   dashStamina: 0
   attackDamage: 0
   critChance: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   collider: {fileID: 6263787568452840954}
   pickUpDelay: 3
   pickUpDelayTimer: 0
-  gearType: 1
+  gearType: 3
 --- !u!58 &6263787568452840954
 CircleCollider2D:
   m_ObjectHideFlags: 0
