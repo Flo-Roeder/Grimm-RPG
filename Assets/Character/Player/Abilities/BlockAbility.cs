@@ -9,6 +9,7 @@ public class BlockAbility : Ability
     [SerializeField] GameObject blockGameobject;
     GameObject blockInstance;
     [SerializeField] int pushAmount;
+    [SerializeField] int radius;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class BlockAbility : Ability
             playerStats.currentStamina -= staminaCost;
             //player.healthController.TakeStamina(staminaCost, false);
             blockInstance = Instantiate(blockGameobject,parent.transform);
+            blockInstance.transform.localScale=new Vector3(radius, radius, 0);
             blockInstance.GetComponent<BlockPush>().knockbackTime = activeTime;
             blockInstance.GetComponent<BlockPush>().knockbackAmount= pushAmount;
         }

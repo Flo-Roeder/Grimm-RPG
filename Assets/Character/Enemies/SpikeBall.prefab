@@ -79,7 +79,7 @@ MonoBehaviour:
   knockbackTimer: 0
   staminaCost: 0
   isPlayer: 0
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 11400000, guid: fb7f6208d45157e40b697437a4402aad, type: 2}
 --- !u!1 &8913411817708140788
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: bcd67596fdbaea143a16960adb6e7f30, type: 2}
+  lootAmount: 1
 --- !u!1001 &2932844581705985581
 PrefabInstance:
   m_ObjectHideFlags: 0
