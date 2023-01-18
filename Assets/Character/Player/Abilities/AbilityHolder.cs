@@ -7,12 +7,12 @@ using UnityEngine.InputSystem;
 
 public class AbilityHolder : MonoBehaviour
 {
-    [SerializeField] Ability ability;
-
+    [SerializeField]public Ability ability;
+    public Ability primary, secondary, terc;
     [SerializeField] bool started;
 
-    float activeTime;
-    float coolDownTime;
+    [SerializeField]float activeTime;
+    [SerializeField]float coolDownTime;
 
     enum AbilityState
     {

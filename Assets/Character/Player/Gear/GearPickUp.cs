@@ -44,19 +44,19 @@ public class GearPickUp : MonoBehaviour
                 switch (gearType)
                 {
                     case GearType.weapon:
-                        gearInventory.PicUpNewWeapon(preFab,transform.parent);
+                        gearInventory.PickUpNewWeapon(preFab,transform.parent);
                         break;
                     case GearType.armor:
-                        gearInventory.PicUpNewArmor(preFab, transform.parent);
+                        gearInventory.PickUpNewArmor(preFab, transform.parent);
                         break;
                     case GearType.helmet:
-                        gearInventory.PicUpNewHelmet(preFab, transform.parent);
+                        gearInventory.PickUpNewHelmet(preFab, transform.parent);
                         break;
                     case GearType.shoes:
-                        gearInventory.PicUpNewShoes(preFab, transform.parent);
+                        gearInventory.PickUpNewShoes(preFab, transform.parent);
                         break;
                     case GearType.juwelery:
-                        gearInventory.PicUpNewJewelery(preFab, transform.parent);
+                        gearInventory.PickUpNewJewelery(preFab, transform.parent);
                         break;
                     default:
                         break;

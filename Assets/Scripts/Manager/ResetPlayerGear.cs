@@ -6,11 +6,13 @@ public class ResetPlayerGear : MonoBehaviour
 {
 
     [SerializeField] GearInventory gearInventory;
+    [SerializeField] AbilityInventory abilityInventory;
 
     // Start is called before the first frame update
     void Start()
     {
         gearInventory.ResetGear();
+        abilityInventory.ResetAbility();
     }
 
     // Update is called once per frame

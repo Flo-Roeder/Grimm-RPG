@@ -15,12 +15,6 @@ public class GearInventory : ScriptableObject
 
 
 
-    private void Awake()
-    {
-        Debug.Log("Awake");
-        //weapon = defaultWeapon;
-    }
-
     public void ResetGear()
     {
         helmet = defaultGear;
@@ -30,7 +24,7 @@ public class GearInventory : ScriptableObject
         jewelery=defaultGear;
     }
 
-    public void PicUpNewWeapon(GameObject _newGear, Transform parent)
+    public void PickUpNewWeapon(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = weapon.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);
@@ -42,7 +36,7 @@ public class GearInventory : ScriptableObject
         AddNewStats(gearStats);
     }
 
-    public void PicUpNewArmor(GameObject _newGear, Transform parent)
+    public void PickUpNewArmor(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = armor.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);
@@ -54,7 +48,7 @@ public class GearInventory : ScriptableObject
         AddNewStats(gearStats);
     }
 
-    public void PicUpNewHelmet(GameObject _newGear, Transform parent)
+    public void PickUpNewHelmet(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = helmet.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);
@@ -66,7 +60,7 @@ public class GearInventory : ScriptableObject
         AddNewStats(gearStats);
     }
 
-    public void PicUpNewShoes(GameObject _newGear, Transform parent)
+    public void PickUpNewShoes(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = shoes.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);
@@ -78,7 +72,7 @@ public class GearInventory : ScriptableObject
         AddNewStats(gearStats);
     }
 
-    public void PicUpNewJewelery(GameObject _newGear, Transform parent)
+    public void PickUpNewJewelery(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = jewelery.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);

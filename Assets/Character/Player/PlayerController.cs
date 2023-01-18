@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
     public CollectableInventory collectableInventory;
     public GearInventory gearInventory;
+    public AbilityInventory abilityInventory;
     public PlayerStats playerStats;
     public bool abilityStarted;
 
