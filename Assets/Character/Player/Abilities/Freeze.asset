@@ -17,6 +17,6 @@ MonoBehaviour:
   activeTime: 3
   coolDown: 5
   started: 0
-  blockGameobject: {fileID: 4626713666421706143, guid: ca82eeb481d7e244fa98174acbed3cb6, type: 3}
-  pushAmount: 3
-  radius: 20
+  blockGameobject: {fileID: 4626713666421706143, guid: 9e56d6679b768804c8cce2aa7c5318ac, type: 3}
+  pushAmount: 0
+  radius: 3

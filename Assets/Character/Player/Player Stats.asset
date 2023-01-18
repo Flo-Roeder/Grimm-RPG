@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23838046ad37eb84f894cada93b692c2, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 200
+  currentHealth: 178
   armor: 0
-  maxStamina: 120
-  currentStamina: 105.648705
+  maxStamina: 140
+  currentStamina: 140
   regenStamina: 18
-  moveSpeed: 20
+  moveSpeed: 18
   dashSpeed: 30
   dashTime: 0.2
   dashCooldown: 1.5
   dashStaminaCost: 20
-  attackDamage: 8
-  critChancePercentage: 50
-  critMultiplier: 1.5
-  attackStaminaCost: 15
+  attackDamage: 43
+  critChancePercentage: 65
+  critMultiplier: 6
+  attackStaminaCost: 25
   knockbackAmount: 0
   knockbackTime: 0.2
