@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-    Animator anim;
+    public Animator anim;
 
-    [SerializeField]private Vector2 moveInput;
+    [SerializeField]public Vector2 moveInput;
 
     private bool _isMoving;
     public bool IsMoving {
@@ -36,21 +37,21 @@ public class PlayerController : MonoBehaviour
 
     public float dashSpeed;
 
-    Vector2 appliedDashForce;
+    public Vector2 appliedDashForce;
     [SerializeField] float dashTime;
     public bool canDash=true;
     public float dashCooldown;
     private float dashTimer;
-    [SerializeField]int dashStaminaCost;
+    [SerializeField] int dashStaminaCost;
 
     [SerializeField] GameObject playerBomb;
 
-    [SerializeField] PlayerHealthController healthController;
+    public PlayerHealthController healthController;
 
     public CollectableInventory collectableInventory;
     public GearInventory gearInventory;
     public PlayerStats playerStats;
-
+    public bool abilityStarted;
 
     private void Awake()
     {
@@ -116,13 +117,31 @@ public class PlayerController : MonoBehaviour
                   && canDash
                   &&anim.GetBool(AnimStrings.canMove))
             {
-                anim.SetTrigger(AnimStrings.isDashing);
+                anim.SetTrigger(AnimStrings.isBlocking);
                 appliedDashForce = new Vector2(Mathf.Abs(anim.GetFloat(AnimStrings.xVelocity)), Mathf.Abs(anim.GetFloat(AnimStrings.yVelocity)) ) * dashSpeed;
                 StartCoroutine(DashCo());
                 canDash = false;
                 healthController.TakeStamina(dashStaminaCost,canDash);
             }
         }
+    }
+
+    public void DashWithoutInput()
+    {
+        if (dashStaminaCost <= healthController.playerStats.currentStamina
+    && moveInput != Vector2.zero)
+        {
+            if (canDash
+                  && anim.GetBool(AnimStrings.canMove))
+            {
+                anim.SetTrigger(AnimStrings.isBlocking);
+                appliedDashForce = new Vector2(Mathf.Abs(anim.GetFloat(AnimStrings.xVelocity)), Mathf.Abs(anim.GetFloat(AnimStrings.yVelocity))) * dashSpeed;
+                StartCoroutine(DashCo());
+                canDash = false;
+                healthController.TakeStamina(dashStaminaCost, canDash);
+            }
+        }
+
     }
 
     private IEnumerator DashCo()
@@ -163,4 +182,6 @@ public class PlayerController : MonoBehaviour
             Instantiate(playerBomb,_bombPosition, Quaternion.identity);
         }
     }
+
+
 }

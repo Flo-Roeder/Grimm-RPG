@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
-                    "type": "Button",
-                    "id": "226d09d8-d72c-4104-95a8-7278946a59c0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Emergency Heal",
                     "type": "Button",
                     "id": "fa1b77e3-954d-4319-86eb-7b528793b42c",
@@ -108,6 +99,24 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "d84aecf9-0715-4008-a017-39bb50f350c9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MobileAbility",
+                    "type": "Button",
+                    "id": "cb2a36c6-b2c5-47ad-bd68-8e9e92a03630",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "test",
+                    "type": "Button",
+                    "id": "e96b3a2c-c0ad-4eea-8ba8-b8ce3b3aa96f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -293,17 +302,6 @@
                 },
                 {
                     "name": "",
-                    "id": "a180d3e0-756f-4dc3-b62c-320b8903b340",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1e10c69a-b749-441f-8e3d-02bd212e39ca",
                     "path": "<Keyboard>/h",
                     "interactions": "",
@@ -409,6 +407,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c7ba661-f7dc-4dad-bca7-65f0a69721a4",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MobileAbility",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16691cf2-988a-4536-ba3f-eebe2dbce34d",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "test",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

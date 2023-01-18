@@ -7,7 +7,8 @@ public enum EnemyState
 {
     idle,
     chase,
-    attack
+    attack,
+    hit
 }
 public class DetectPlayerDistance : EnemyAttackBehave
 {
@@ -32,25 +33,25 @@ public class DetectPlayerDistance : EnemyAttackBehave
     private void Update()
     { 
         distance = Vector2.SqrMagnitude(player.transform.position- transform.position);
-        
-        if (distance<attackRadius)
+        if (enemyState!=EnemyState.hit)
         {
-            enemyState = EnemyState.attack;
-            healthFill.color = attackColor;
-        }
-        else if (distance<chaseRaduis)
-        {
-            enemyState = EnemyState.chase;
-            healthFill.color = chaseColor;
+            if (distance < attackRadius)
+            {
+                enemyState = EnemyState.attack;
+                healthFill.color = attackColor;
+            }
+            else if (distance < chaseRaduis)
+            {
+                enemyState = EnemyState.chase;
+                healthFill.color = chaseColor;
 
-        }
-        else
-        {
-            enemyState = EnemyState.idle;
-            healthFill.color = idleColor;
+            }
+            else
+            {
+                enemyState = EnemyState.idle;
+                healthFill.color = idleColor;
 
+            }
         }
     }
-
-
 }

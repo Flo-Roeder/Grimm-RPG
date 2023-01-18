@@ -5,13 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/preGamePlayerStats.unity
     guid: fdeb8be530fa00442b3b60cbc4b694fa
   - enabled: 1
-    path: Assets/Scenes/protoType.unity
-    guid: f2e783b71777e8e42bd4390aff008785
+    path: Assets/Scenes/protoType Run.unity
+    guid: b4442885b614ed447b383d4249bcb5ea
   m_configObjects: {}

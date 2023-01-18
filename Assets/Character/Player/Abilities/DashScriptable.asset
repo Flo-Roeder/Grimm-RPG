@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9c45678afe6cf4abc5a8fe6aada268, type: 3}
+  m_Name: DashScriptable
+  m_EditorClassIdentifier: 
+  activeTime: 0.2
+  coolDown: 2
+  started: 0
+  dashSpeed: 20
+  debug: dash
+  playerStats: {fileID: 11400000, guid: fb7f6208d45157e40b697437a4402aad, type: 2}
+  staminaCost: 10

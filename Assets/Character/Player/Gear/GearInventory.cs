@@ -30,60 +30,67 @@ public class GearInventory : ScriptableObject
         jewelery=defaultGear;
     }
 
-    public void PicUpNewWeapon(GameObject _newGear)
+    public void PicUpNewWeapon(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = weapon.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);
         GameObject newWeapon = Instantiate(weapon, _newGear.transform.position, Quaternion.identity);
+        newWeapon.transform.parent = parent;
         newWeapon.SetActive(true);
         weapon = _newGear;
         gearStats = weapon.GetComponent<GearPickUp>();
         AddNewStats(gearStats);
     }
 
-    public void PicUpNewArmor(GameObject _newGear)
+    public void PicUpNewArmor(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = armor.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);
         GameObject newWeapon = Instantiate(armor, _newGear.transform.position, Quaternion.identity);
+        newWeapon.transform.parent = parent;
         newWeapon.SetActive(true);
         armor = _newGear;
         gearStats = armor.GetComponent<GearPickUp>();
         AddNewStats(gearStats);
     }
 
-    public void PicUpNewHelmet(GameObject _newGear)
+    public void PicUpNewHelmet(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = helmet.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);
         GameObject newWeapon = Instantiate(helmet, _newGear.transform.position, Quaternion.identity);
+        newWeapon.transform.parent = parent;
         newWeapon.SetActive(true);
         helmet = _newGear;
         gearStats = helmet.GetComponent<GearPickUp>();
         AddNewStats(gearStats);
     }
 
-    public void PicUpNewShoes(GameObject _newGear)
+    public void PicUpNewShoes(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = shoes.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);
         GameObject newWeapon = Instantiate(shoes, _newGear.transform.position, Quaternion.identity);
+        newWeapon.transform.parent = parent;
         newWeapon.SetActive(true);
         shoes = _newGear;
         gearStats = shoes.GetComponent<GearPickUp>();
         AddNewStats(gearStats);
     }
 
-    public void PicUpNewJewelery(GameObject _newGear)
+    public void PicUpNewJewelery(GameObject _newGear, Transform parent)
     {
         GearPickUp gearStats = jewelery.GetComponent<GearPickUp>();
         RemoveOldStats(gearStats);
         GameObject newWeapon = Instantiate(jewelery, _newGear.transform.position, Quaternion.identity);
+        newWeapon.transform.parent = parent;
         newWeapon.SetActive(true);
         jewelery = _newGear;
         gearStats = jewelery.GetComponent<GearPickUp>();
         AddNewStats(gearStats);
+
     }
+
 
 
     private void AddPlayerStats(int maxHealth, int armor, int maxStamina, int staminaReg, int moveSpeed,
