@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class AbilityHolder : MonoBehaviour
 {
-    [SerializeField]public Ability ability;
+    public Ability ability;
     public Ability primary, secondary, terc;
     [SerializeField] bool started;
 

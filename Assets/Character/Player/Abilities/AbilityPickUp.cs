@@ -47,7 +47,7 @@ public class AbilityPickUp : MonoBehaviour
                         break;
                 }
                 //playerController.SetStats();
-                //GameObject.FindGameObjectWithTag("GearUI").GetComponent<GearUI>().UpdateUIImages(preFab);
+                GameObject.FindGameObjectWithTag("AbilityUI").GetComponent<AbilityUI>().UpdateAbilityUI();
                 //Destroy(this.gameObject);
                 this.gameObject.SetActive(false);
                 playerInteract.isInteracting = false;

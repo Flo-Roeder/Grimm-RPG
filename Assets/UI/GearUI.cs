@@ -9,17 +9,7 @@ public class GearUI : MonoBehaviour
     [SerializeField] Image helmetImage, armorImage, shoeImage, weaponImage, juweleryImage;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void UpdateUIImages(GameObject gear)
     {

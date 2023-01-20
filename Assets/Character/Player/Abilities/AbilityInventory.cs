@@ -13,7 +13,7 @@ public class AbilityInventory : ScriptableObject
     {
         primary = defaultAbility;
         secondary = defaultAbility;
-        terc= defaultAbility;
+        //terc= defaultAbility;
     }
 
     public void PickUpNewPrimary(GameObject _newAbility, Transform parent)
@@ -33,7 +33,7 @@ public class AbilityInventory : ScriptableObject
         oldAbility.SetActive(true);
         secondary = _newAbility;
         AbilityHolder abilityHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityHolderSecond>();
-        //abilityHolder.secondary = secondary.GetComponent<AbilityPickUp>().ability;
+        abilityHolder.secondary = secondary.GetComponent<AbilityPickUp>().ability;
         Ability ability = secondary.GetComponent<AbilityPickUp>().ability;
         abilityHolder.ability= ability;
     }

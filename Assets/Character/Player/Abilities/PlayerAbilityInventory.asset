@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primary: {fileID: 2437410767437716154, guid: 28e6ea1196b38e24f8caa92fa982bfae, type: 3}
   secondary: {fileID: 0}
-  terc: {fileID: 2437410767437716154, guid: 28e6ea1196b38e24f8caa92fa982bfae, type: 3}
+  terc: {fileID: 0}
   defaultAbility: {fileID: 2437410767437716154, guid: 28e6ea1196b38e24f8caa92fa982bfae, type: 3}

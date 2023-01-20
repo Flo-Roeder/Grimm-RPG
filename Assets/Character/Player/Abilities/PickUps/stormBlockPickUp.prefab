@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6637371842367138869}
   - component: {fileID: 8979294019983870148}
   - component: {fileID: 233194877567366487}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: stormBlockPickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -105,7 +105,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MobileAbility",
+                    "name": "Terc MobileAbility",
                     "type": "Button",
                     "id": "cb2a36c6-b2c5-47ad-bd68-8e9e92a03630",
                     "expectedControlType": "Button",
@@ -123,7 +123,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Buff",
+                    "name": "Second Buff Ability",
                     "type": "Button",
                     "id": "6ec47cc8-5f51-46eb-941b-eba085ce1092",
                     "expectedControlType": "Button",
@@ -426,7 +426,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "MobileAbility",
+                    "action": "Terc MobileAbility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -448,7 +448,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Buff",
+                    "action": "Second Buff Ability",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
