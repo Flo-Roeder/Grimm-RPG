@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7193484632307205292}
   - component: {fileID: 7193484632307205295}
   - component: {fileID: 7193484632307205294}
-  - component: {fileID: 4543598490330056970}
+  - component: {fileID: 4298656419735394592}
   m_Layer: 12
   m_Name: StaminaUp_shop
   m_TagString: Untagged
@@ -103,7 +103,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.20116936}
   serializedVersion: 2
   m_Radius: 0.21482307
---- !u!114 &4543598490330056970
+--- !u!114 &4298656419735394592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,12 +112,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7193484632307205288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92794badf7383154487d321b0b8900d4, type: 3}
+  m_Script: {fileID: 11500000, guid: c66e73f42e671794f87663964d5c6721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 50
   cost: 25
   textMesh: {fileID: 7193484633537878731}
+  collectableType: 4
 --- !u!1 &7193484633212731331
 GameObject:
   m_ObjectHideFlags: 0

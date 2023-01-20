@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7193484632307205292}
   - component: {fileID: 7193484632307205295}
   - component: {fileID: 7193484632307205294}
-  - component: {fileID: 7193484632307205289}
+  - component: {fileID: 1350106533}
   m_Layer: 12
   m_Name: Bomb_shop
   m_TagString: Untagged
@@ -103,7 +103,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.18634638}
   serializedVersion: 2
   m_Radius: 0.25929204
---- !u!114 &7193484632307205289
+--- !u!114 &1350106533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,12 +112,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7193484632307205288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3845f5ae93b737d4ebd4c58ce16ffde1, type: 3}
+  m_Script: {fileID: 11500000, guid: c66e73f42e671794f87663964d5c6721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombValue: 1
+  value: 1
   cost: 10
   textMesh: {fileID: 7193484633537878731}
+  collectableType: 0
 --- !u!1 &7193484633212731331
 GameObject:
   m_ObjectHideFlags: 0

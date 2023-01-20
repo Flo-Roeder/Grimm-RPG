@@ -23,7 +23,7 @@ public class KeyShop : MonoBehaviour
             if (collectableInventory.coins>=cost)
             {
             collectableInventory.keys += keyValue;
-                collectableInventory.coins -= cost;
+            collectableInventory.coins -= cost;
             Destroy(this.gameObject);
             GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
             }

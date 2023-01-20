@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7193484632307205292}
   - component: {fileID: 7193484632307205295}
   - component: {fileID: 7193484632307205294}
-  - component: {fileID: 5216821494072802598}
+  - component: {fileID: 9145932439933665871}
   m_Layer: 12
   m_Name: Heal_shop
   m_TagString: Untagged
@@ -103,7 +103,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.2541086}
   serializedVersion: 2
   m_Radius: 0.22117575
---- !u!114 &5216821494072802598
+--- !u!114 &9145932439933665871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,12 +112,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7193484632307205288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fcab7c26ff76f14290949ecaa4c7daf, type: 3}
+  m_Script: {fileID: 11500000, guid: c66e73f42e671794f87663964d5c6721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healValue: 50
+  value: 50
   cost: 15
   textMesh: {fileID: 7193484633537878731}
+  collectableType: 2
 --- !u!1 &7193484633212731331
 GameObject:
   m_ObjectHideFlags: 0
