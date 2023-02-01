@@ -6,8 +6,11 @@ using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+
 public class PlayerController : MonoBehaviour
 {
+
     Rigidbody2D rb;
     public Animator anim;
 
@@ -81,19 +84,47 @@ public class PlayerController : MonoBehaviour
                 dashTimer = dashCooldown;
             }
         }
+        //Debug.Log(moveInput);
     }
 
     private void FixedUpdate()
     {
-        if(anim.GetBool(AnimStrings.canMove))
-        {
-            rb.velocity = new Vector2(moveInput.x*(moveSpeed+appliedDashForce.x), moveInput.y*(moveSpeed+appliedDashForce.y));
 
+
+        //dash out of standing position
+        if (moveInput == Vector2.zero
+            && appliedDashForce != Vector2.zero)
+        {
+            rb.velocity = new Vector2(anim.GetFloat(AnimStrings.xVelocity) * (moveSpeed + appliedDashForce.x), anim.GetFloat(AnimStrings.yVelocity) * (moveSpeed + appliedDashForce.y));
+            return;
+        }
+
+        //dashing while moving
+        if (appliedDashForce != Vector2.zero)
+        {
+            rb.velocity = new Vector2(moveInput.x * (moveSpeed + appliedDashForce.x), moveInput.y * (moveSpeed + appliedDashForce.y));
+            return;
+        }
+
+        //move retriction
+        if (!anim.GetBool(AnimStrings.canMove))
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
+        //applie move velocity
+        if (moveInput != Vector2.zero)
+        {
+            rb.velocity = new Vector2(moveInput.x * (moveSpeed + appliedDashForce.x), moveInput.y * (moveSpeed + appliedDashForce.y));
+            IsMoving = true;
         }
         else
         {
             rb.velocity = Vector2.zero;
         }
+
+        //setting the animation variables
         if (rb.velocity!=Vector2.zero)
         {
             anim.SetFloat(AnimStrings.xVelocity, rb.velocity.x/(moveSpeed+appliedDashForce.x));
@@ -103,54 +134,12 @@ public class PlayerController : MonoBehaviour
 
     public void Movement(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
-        moveInput.Normalize();
-        moveInput.y *= 0.5f; //isometric factor
-        IsMoving = moveInput != Vector2.zero;
-    }
-
-    public void Dash(InputAction.CallbackContext context)
-    {
-        if (dashStaminaCost<=healthController.playerStats.currentStamina
-            && moveInput!=Vector2.zero)
-        {
-            if (context.started
-                  && canDash
-                  &&anim.GetBool(AnimStrings.canMove))
-            {
-                anim.SetTrigger(AnimStrings.isBlocking);
-                appliedDashForce = new Vector2(Mathf.Abs(anim.GetFloat(AnimStrings.xVelocity)), Mathf.Abs(anim.GetFloat(AnimStrings.yVelocity)) ) * dashSpeed;
-                StartCoroutine(DashCo());
-                canDash = false;
-                healthController.TakeStamina(dashStaminaCost,canDash);
-            }
-        }
-    }
-
-    public void DashWithoutInput()
-    {
-        if (dashStaminaCost <= healthController.playerStats.currentStamina
-    && moveInput != Vector2.zero)
-        {
-            if (canDash
-                  && anim.GetBool(AnimStrings.canMove))
-            {
-                anim.SetTrigger(AnimStrings.isBlocking);
-                appliedDashForce = new Vector2(Mathf.Abs(anim.GetFloat(AnimStrings.xVelocity)), Mathf.Abs(anim.GetFloat(AnimStrings.yVelocity))) * dashSpeed;
-                StartCoroutine(DashCo());
-                canDash = false;
-                healthController.TakeStamina(dashStaminaCost, canDash);
-            }
-        }
+            moveInput = context.ReadValue<Vector2>();
+            moveInput.Normalize();
+            moveInput.y *= 0.5f; //isometric factor
+            IsMoving = moveInput != Vector2.zero;
 
     }
-
-    private IEnumerator DashCo()
-    {
-        yield return new WaitForSeconds(dashTime);
-        appliedDashForce = Vector2.zero;
-    }
-
 
     public void Attack(InputAction.CallbackContext context)
     {

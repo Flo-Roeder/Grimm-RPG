@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
-
-public class AbilityHolder : MonoBehaviour
+[System.Serializable]
+public class AbilityHolder:MonoBehaviour
 {
     public Ability ability;
     public Ability primary, secondary, terc;
@@ -22,11 +23,10 @@ public class AbilityHolder : MonoBehaviour
     }
 
     [SerializeField] AbilityState state = AbilityState.ready;
-
+    [SerializeField] Image cooldownImage;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -41,7 +41,8 @@ public class AbilityHolder : MonoBehaviour
                     activeTime = ability.activeTime;
                     ability.StartAbility(gameObject);
                     state = AbilityState.active;
-
+                    cooldownImage.fillAmount = 1;
+                    cooldownImage.color=new Color(220,220,150,0.20f);
                 }
 
                 break;
@@ -59,10 +60,14 @@ public class AbilityHolder : MonoBehaviour
 
             case AbilityState.cooldown:
                 coolDownTime -= Time.deltaTime;
+                cooldownImage.color = new Color(0, 0, 0, 0.70f);
+                cooldownImage.fillAmount = coolDownTime/ ability.coolDown;
+
                 if (coolDownTime <= 0)
                 {
                     state = AbilityState.ready;
                     ability.RefreshAbility(gameObject);
+                    cooldownImage.fillAmount = 0;
                 }
                 break;
 
