@@ -26,8 +26,8 @@ public class BlockAbility : Ability
     {
         PlayerController player = parent.GetComponent<PlayerController>();
 
-        if (staminaCost <= playerStats.currentStamina
-            && player.anim.GetBool(AnimStrings.canMove))
+        if (staminaCost <= playerStats.currentStamina)
+            //&& player.anim.GetBool(AnimStrings.canMove))
         {
             player.anim.SetTrigger(AnimStrings.isBlocking);
 

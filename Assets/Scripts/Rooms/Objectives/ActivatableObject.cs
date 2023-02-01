@@ -19,6 +19,7 @@ public class ActivatableObject : MonoBehaviour
     [SerializeField] Sprite openSprite;
     SpriteRenderer spriteRenderer;
 
+    [SerializeField] Collider2D collisionCollider;
 
     [Header("Optional for beneath")]
     [SerializeField] int value;
@@ -31,13 +32,22 @@ public class ActivatableObject : MonoBehaviour
 
     private SpawnLoot spawnLoot;
 
+    private Color spriteColor;
+    float alphaFade;
     // Start is called before the first frame update
     void Start()
     {
         spawnLoot= GetComponent<SpawnLoot>();
         spriteRenderer= GetComponent<SpriteRenderer>();
+        spriteColor=spriteRenderer.color;
+        alphaFade=spriteColor.a;
     }
 
+    private void Update()
+    {
+        spriteColor.a = Mathf.MoveTowards(spriteColor.a, alphaFade, Time.deltaTime/2);
+        spriteRenderer.color = spriteColor;
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -99,11 +109,19 @@ public class ActivatableObject : MonoBehaviour
 
     private void OpenChest()
     {
+        collisionCollider.enabled=false;
         spriteRenderer.sprite = openSprite;
-        isOpen = true;
+
+        Color _tmp= spriteRenderer.color;
+        _tmp.a = 0.5f;
+        spriteRenderer.color=_tmp;
+        alphaFade = 0f;
         if (spawnLoot)
         {
             spawnLoot.DropLoot();
         }
+        isOpen = true;
     }
+
+
 }

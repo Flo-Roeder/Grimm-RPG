@@ -133,6 +133,7 @@ MonoBehaviour:
   opentype: 2
   isOpen: 0
   openSprite: {fileID: 21300000, guid: 314ea89c75e94ce4da9683465e0baa67, type: 3}
+  collisionCollider: {fileID: 4272475398113399245}
   value: 1
   playerStats: {fileID: 0}
   collectableInventory: {fileID: 11400000, guid: ae3b083c6aa3b1f44b2c896693d7d031, type: 2}
