@@ -9338,6 +9338,22 @@ PrefabInstance:
       propertyPath: healthUI
       value: 
       objectReference: {fileID: 135953217}
+    - target: {fileID: 1725500107, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9341049
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725500107, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725500107, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414313707610315944, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -192751410, guid: e93b78d8bbe3e9243a6435b03aadffb5, type: 3}
     - target: {fileID: 3414313707610315945, guid: 5de6abdf759bab747baa20b7ecfb0bfe, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 24

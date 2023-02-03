@@ -85,6 +85,16 @@ public class PlayerController : MonoBehaviour
             }
         }
         //Debug.Log(moveInput);
+        if (anim.GetFloat(AnimStrings.xVelocity)<0
+            && transform.localScale.x>0
+            ||
+            anim.GetFloat(AnimStrings.xVelocity) >0
+            && transform.localScale.x < 0
+            )
+        {
+            transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y,transform.localScale.z);
+        }
+
     }
 
     private void FixedUpdate()
