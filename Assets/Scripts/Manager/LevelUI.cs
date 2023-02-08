@@ -11,12 +11,12 @@ public class LevelUI : MonoBehaviour
     void Start()
     {
         textMesh= GetComponentInChildren<TextMeshProUGUI>();
-        textMesh.text = "Level " + "1 - " + levelRoom;
+        textMesh.text = "LEVEL " + "1 - " + levelRoom;
     }
 
     public void NextRoomUpdateLevelUI()
     {
         levelRoom++;
-        textMesh.text = "Level " + "1 - " + levelRoom;
+        textMesh.text = "LEVEL " + "1 - " + levelRoom;
     }
 }

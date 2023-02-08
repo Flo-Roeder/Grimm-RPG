@@ -54,7 +54,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         _damage = _damage - armor > 0 ? _damage - armor : 0;
         int hitDamage = _damage + _piercedamage;
-        playerStats.currentHealth -= _piercedamage;
+        playerStats.currentHealth -= hitDamage;
         anim.SetTrigger(AnimStrings.isHit);
         Death();
         healthUI.SetHealthUI(playerStats.maxHealth, playerStats.currentHealth, isPlayer);
