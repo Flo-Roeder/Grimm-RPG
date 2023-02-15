@@ -18,16 +18,15 @@ public class AbilityHolder:MonoBehaviour
     enum AbilityState
     {
         ready,
+        casting,
         active,
         cooldown
     }
 
     [SerializeField] AbilityState state = AbilityState.ready;
     [SerializeField] Image cooldownImage;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -36,15 +35,26 @@ public class AbilityHolder:MonoBehaviour
         switch (state)
         {
             case AbilityState.ready:
-                if(started)
+                if(started
+                    && !this.GetComponent<Animator>().GetBool(AnimStrings.abilityActive)
+                    &&this.GetComponent<Animator>().GetBool(AnimStrings.canMove))
+                {
+                    state = AbilityState.casting;
+                    cooldownImage.fillAmount = 1;
+                    cooldownImage.color=new Color(220,220,150,0.20f);
+                    ability.CastingAbility(gameObject);
+                }
+
+                break;
+
+            case AbilityState.casting:
+                if (this.GetComponent<Animator>().GetBool(AnimStrings.abilityActive))
                 {
                     activeTime = ability.activeTime;
                     ability.StartAbility(gameObject);
-                    state = AbilityState.active;
-                    cooldownImage.fillAmount = 1;
-                    cooldownImage.color=new Color(220,220,150,0.20f);
-                }
 
+                    state = AbilityState.active;
+                }
                 break;
 
             case AbilityState.active:

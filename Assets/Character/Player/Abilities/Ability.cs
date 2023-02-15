@@ -22,7 +22,10 @@ public class Ability : ScriptableObject
         
     }
 
+    public virtual void CastingAbility(GameObject parent)
+    {
 
+    }
     public virtual void StartAbility(GameObject parent) { 
 
     }

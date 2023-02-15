@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     public Animator anim;
 
-    [SerializeField]public Vector2 moveInput;
+    public Vector2 moveInput;
 
     private bool _isMoving;
     public bool IsMoving {
@@ -38,14 +39,8 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed ;
 
-    public float dashSpeed;
 
-    public Vector2 appliedDashForce;
-    [SerializeField] float dashTime;
-    public bool canDash=true;
-    public float dashCooldown;
-    private float dashTimer;
-    [SerializeField] int dashStaminaCost;
+    public Vector2 appliedDashForce; //gets set by dash ability
 
     [SerializeField] GameObject playerBomb;
 
@@ -66,34 +61,26 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        dashTimer = dashCooldown;
     }
 
     void Update()
     {
-        if (!canDash)
-        {
-            if (dashTimer > 0)
-            {
-                dashTimer -= Time.deltaTime;
-            }
-            else if (dashTimer<=0)
-            {
-                canDash= true;
-                healthController.canDash = true;
-                dashTimer = dashCooldown;
-            }
-        }
-        //Debug.Log(moveInput);
-        if (anim.GetFloat(AnimStrings.xVelocity)<0
-            && transform.localScale.x>0
+
+        TurnPlayer();
+
+    }
+
+    private void TurnPlayer()
+    {
+        //only if the current transform doesnt match the stored xVelocity
+         if (anim.GetFloat(AnimStrings.xVelocity) < 0
+            && transform.localScale.x > 0
             ||
-            anim.GetFloat(AnimStrings.xVelocity) >0
-            && transform.localScale.x < 0
-            )
-        {
+            anim.GetFloat(AnimStrings.xVelocity) > 0
+            && transform.localScale.x < 0)
+         {
             transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y,transform.localScale.z);
-        }
+         }
 
     }
 
@@ -116,7 +103,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        //move retriction
+        //move restriction
         if (!anim.GetBool(AnimStrings.canMove))
         {
             rb.velocity = Vector2.zero;
@@ -163,24 +150,6 @@ public class PlayerController : MonoBehaviour
     public void SetStats()
     {
         moveSpeed = playerStats.moveSpeed;
-        dashSpeed = playerStats.dashSpeed;
-        dashTime = playerStats.dashTime;
-        dashCooldown = playerStats.dashCooldown;
-        dashStaminaCost = (int)playerStats.dashStaminaCost;
-    }
-
-    public void PlaceBomb(InputAction.CallbackContext context)
-    {
-        if (context.started
-            && collectableInventory.bombs>0)
-        {
-            collectableInventory.bombs--;
-            GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
-            Vector3 _bombPosition = new Vector3(anim.GetFloat(AnimStrings.xVelocity), anim.GetFloat(AnimStrings.yVelocity)*2,0)*3
-                                                + new Vector3 (transform.position.x, transform.position.y-1,transform.position.z);
-
-            Instantiate(playerBomb,_bombPosition, Quaternion.identity);
-        }
     }
 
 

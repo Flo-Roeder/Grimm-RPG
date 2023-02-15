@@ -15,4 +15,5 @@ internal class AnimStrings
     internal static string isDashing = "isDashing";
     internal static string roomCleared="roomCleared";
     internal static string isBlocking = "isBlocking";
+    internal static string abilityActive = "abilityActive";
 }
