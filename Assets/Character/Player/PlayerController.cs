@@ -18,26 +18,27 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveInput;
 
     private bool _isMoving;
-    public bool IsMoving {
+    public bool IsMoving
+    {
         get
         {
             return _isMoving;
         }
-        private set 
+        private set
         {
             _isMoving = value;
             anim.SetBool(AnimStrings.isMoving, value);
         }
     }
 
-    [SerializeField]private bool _canMove;
+    [SerializeField] private bool _canMove;
     public bool CanMove
     {
         get { return _canMove; }
         set { _canMove = anim.GetBool(AnimStrings.canMove); }
     }
 
-    public float moveSpeed ;
+    public float moveSpeed;
 
 
     public Vector2 appliedDashForce; //gets set by dash ability
@@ -54,8 +55,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        rb= GetComponent<Rigidbody2D>();
-        anim= GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         SetStats();
     }
 
@@ -73,14 +74,14 @@ public class PlayerController : MonoBehaviour
     private void TurnPlayer()
     {
         //only if the current transform doesnt match the stored xVelocity
-         if (anim.GetFloat(AnimStrings.xVelocity) < 0
-            && transform.localScale.x > 0
-            ||
-            anim.GetFloat(AnimStrings.xVelocity) > 0
-            && transform.localScale.x < 0)
-         {
-            transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y,transform.localScale.z);
-         }
+        if (anim.GetFloat(AnimStrings.xVelocity) < 0
+           && transform.localScale.x > 0
+           ||
+           anim.GetFloat(AnimStrings.xVelocity) > 0
+           && transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
 
     }
 
@@ -122,26 +123,26 @@ public class PlayerController : MonoBehaviour
         }
 
         //setting the animation variables
-        if (rb.velocity!=Vector2.zero)
+        if (rb.velocity != Vector2.zero)
         {
-            anim.SetFloat(AnimStrings.xVelocity, rb.velocity.x/(moveSpeed+appliedDashForce.x));
-            anim.SetFloat(AnimStrings.yVelocity, rb.velocity.y/(moveSpeed+appliedDashForce.y));
+            anim.SetFloat(AnimStrings.xVelocity, rb.velocity.x / (moveSpeed + appliedDashForce.x));
+            anim.SetFloat(AnimStrings.yVelocity, rb.velocity.y / (moveSpeed + appliedDashForce.y));
         }
     }
 
     public void Movement(InputAction.CallbackContext context)
     {
-            moveInput = context.ReadValue<Vector2>();
-            moveInput.Normalize();
-            moveInput.y *= 0.5f; //isometric factor
-            IsMoving = moveInput != Vector2.zero;
+        moveInput = context.ReadValue<Vector2>();
+        moveInput.Normalize();
+        moveInput.y *= 0.5f; //isometric factor
+        IsMoving = moveInput != Vector2.zero;
 
     }
 
     public void Attack(InputAction.CallbackContext context)
     {
         if (context.started
-            && playerStats.attackStaminaCost<=playerStats.currentStamina)
+            && playerStats.attackStaminaCost <= playerStats.currentStamina)
         {
             anim.SetTrigger(AnimStrings.isAttacking);
         }
@@ -152,5 +153,19 @@ public class PlayerController : MonoBehaviour
         moveSpeed = playerStats.moveSpeed;
     }
 
+    //TO DO exklude or rework
+    public void PlaceBomb(InputAction.CallbackContext context)
+    {
+        if (context.started
+            && collectableInventory.bombs > 0)
+        {
+            collectableInventory.bombs--;
+            GameObject.FindGameObjectWithTag("CollectableUI").GetComponent<CollectablesUI>().CollectableUIUpdate();
+            Vector3 _bombPosition = new Vector3(anim.GetFloat(AnimStrings.xVelocity), anim.GetFloat(AnimStrings.yVelocity) * 2, 0) * 3
+                                                + new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
 
+            Instantiate(playerBomb, _bombPosition, Quaternion.identity);
+        }
+
+    }
 }
