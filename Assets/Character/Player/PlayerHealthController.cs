@@ -17,6 +17,9 @@ public class PlayerHealthController : MonoBehaviour
 
     public PlayerStats playerStats;
 
+    bool isDead;
+    Material material;
+    float fade=1;
 
     private void Awake()
     {
@@ -30,14 +33,26 @@ public class PlayerHealthController : MonoBehaviour
     {
         SetHealthUI();
         SetStats();
+        material= GetComponentInParent<SpriteRenderer>().material;
     }
 
     private void Update()
     {
         playerStats.currentStamina = (playerStats.currentStamina < playerStats.maxStamina ? playerStats.currentStamina + Time.deltaTime * playerStats.regenStamina : playerStats.maxStamina);
         healthUI.SetStaminaUI(playerStats.maxStamina, playerStats.currentStamina, canDash);
-        
 
+
+        //after dead fade out the player through the shader graph and restart game
+        if (isDead)
+        {
+            fade -= 0.3f*Time.deltaTime;
+            if (fade<0)
+            {
+                SceneManager.LoadScene(0);
+                gameObject.GetComponentInParent<Rigidbody2D>().gameObject.SetActive(false);
+            }
+            material.SetFloat("_Fade", fade);
+        }
     }
 
 
@@ -93,8 +108,7 @@ public class PlayerHealthController : MonoBehaviour
         {
             //TODO death animation
             //DeathEventTrigger?.Invoke();
-            gameObject.GetComponentInParent<Rigidbody2D>().gameObject.SetActive(false);
-            SceneManager.LoadScene(0);
+            isDead = true;
         }
     }
 

@@ -22,6 +22,8 @@ public class EnemyHealthController : MonoBehaviour
 
     SpawnLoot spawnLoot;
 
+    Material material;
+
     private void Awake()
     {
         spawnLoot = GetComponent<SpawnLoot>();
@@ -32,6 +34,8 @@ public class EnemyHealthController : MonoBehaviour
 
     private void Start()
     {
+        material= GetComponent<SpriteRenderer>().material;
+
         if (healthUI!=null)
         {
             healthUI.SetHealthUI(maxHealth,currentHealth,isPlayer);
@@ -49,6 +53,7 @@ public class EnemyHealthController : MonoBehaviour
         _damage = _damage - armor > 0 ? _damage - armor : 0;
         currentHealth -= _damage;
 
+        material.SetFloat("_Fade", (float)currentHealth/(float)maxHealth+.25F);
 
         Death();
 

@@ -60,9 +60,7 @@ public class PlayerController : MonoBehaviour
         SetStats();
     }
 
-    void Start()
-    {
-    }
+
 
     void Update()
     {

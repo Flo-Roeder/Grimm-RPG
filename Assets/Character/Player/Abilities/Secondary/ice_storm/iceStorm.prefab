@@ -117,6 +117,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackAmount: 5
   knockbackTime: 1
+  damage: 1
+  tickTime: 0.5
+  canTick: 1
 --- !u!95 &3648082019155456551
 Animator:
   serializedVersion: 4
