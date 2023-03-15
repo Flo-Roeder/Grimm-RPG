@@ -23,7 +23,7 @@ public class EnemyHealthController : MonoBehaviour
     SpawnLoot spawnLoot;
 
     Material material;
-
+    float fade=1F;
     private void Awake()
     {
         spawnLoot = GetComponent<SpawnLoot>();
@@ -45,6 +45,9 @@ public class EnemyHealthController : MonoBehaviour
     private void Update()
     {
         currentStamina = currentStamina < maxStamina ? currentStamina + Time.deltaTime*10 : maxStamina;
+        fade = Mathf.MoveTowards(fade, Mathf.Clamp((float)currentHealth / (float)maxHealth,.25F,1F), .05F);
+        material.SetFloat("_Fade", fade);
+
     }
 
 
@@ -53,7 +56,6 @@ public class EnemyHealthController : MonoBehaviour
         _damage = _damage - armor > 0 ? _damage - armor : 0;
         currentHealth -= _damage;
 
-        material.SetFloat("_Fade", (float)currentHealth/(float)maxHealth+.25F);
 
         Death();
 
